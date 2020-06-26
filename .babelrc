@@ -17,5 +17,5 @@
     "@babel/plugin-proposal-optional-chaining",
     "@babel/plugin-proposal-nullish-coalescing-operator"
   ],
-  "only": ["front/js/*.js", "front/js/**/*.js"]
+  "only": ["front/src/*.js", "front/src/**/*.js"]
 }

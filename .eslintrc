@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "prettier/react"],
   "plugins": ["babel"],
   "parser": "babel-eslint",
   "env": {
@@ -8,6 +8,7 @@
   "rules": {
     "arrow-body-style": 0,
     "camelcase": 0,
+    "import/prefer-default-export": 0,
     "babel/camelcase": [
       "error",
       {
