@@ -9,7 +9,7 @@ const cssnano = require('cssnano');
 
 module.exports = {
   entry: {
-    app: './front/js/app.js',
+    app: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'public/dist'),
