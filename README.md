@@ -13,7 +13,8 @@
     - npm install
 
 #### create the postgres databases
-    - brew start postgres
+    - brew install postgres
+    - brew services start postgresql
 
 #### update config/database.yml details if needed
     - rake db:setup
