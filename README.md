@@ -1,26 +1,29 @@
 # phoenix
 
-#### install ruby
-    - use ruby version manager
+### Install RVM(Ruby Version Manager) 
+`\curl -sSL https://get.rvm.io | bash -s stable --ruby`
+    
+#### Install Ruby 2.7.1 using RVM
+    - rvm install ruby-2.7.1
 
-#### install bundler if not available
+#### Install bundler if not available
     - gem install bundler
 
-#### install gem dependencies
+#### Install gem dependencies
     - bundle install
 
-#### install npm dependencies
+#### Install npm dependencies
     - npm install
 
-#### create the postgres databases
+#### Create the postgres databases
     - brew install postgres
     - brew services start postgresql
 
-#### update config/database.yml details if needed
+#### Update config/database.yml details if needed
     - rake db:setup
 
-#### generate assets for development
+#### Generate assets for development
     - npm run webpack
 
-#### start server
+#### Start server
     - rails s
