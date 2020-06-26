@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  get 'home/timestamp'
-
-  root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  namespace :api, defaults: {format: :json} do
+    namespace :v0 do
+      resources :example, only: :index
+    end
+  end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
