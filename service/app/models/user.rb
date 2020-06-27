@@ -12,9 +12,22 @@ class User < ApplicationRecord
     MEMBER => 'member'
   }.freeze
 
-  USER_TYPE = {
-    0 => 'individual',
-    1 => 'institute',
+  INDIVIDUAL = 0
+  INSTITUTE = 1
+
+  USER_TYPES = {
+    INDIVIDUAL => 'individual',
+    INSTITUTE => 'institute',
+  }.freeze
+
+  ACTIVE = 0
+  ARCHIVED = 1
+  BLACKLISTED = 2
+
+  STATUSES = {
+    ACTIVE => 'active',
+    ARCHIVED => 'archived',
+    BLACKLISTED => 'blacklisted'
   }.freeze
 
   def admin?
