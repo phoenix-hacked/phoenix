@@ -31,13 +31,13 @@ const Homepage = lazy(() => import('../Homepage'));
 
 const Dashboard1 = lazy(() => import('../Library/dashboard/Dashboard1'));
 
-const AppRoutes = () => {
+const AppRoutes = (prop) => {
   return (
     <Suspense fallback={<Spinner />}>
       <Switch>
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
-        <Route exact path="/dashboard1" component={Dashboard1} />
+        <Route exact path="/dashboard1" exact render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
 

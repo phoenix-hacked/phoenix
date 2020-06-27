@@ -3,17 +3,26 @@ import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import { Sparklines, SparklinesBars } from 'react-sparklines';
 import { ProgressBar, Dropdown } from 'react-bootstrap';
 
+import Homepage from '../../Homepage'
+
 import CompleteSignup from '../../Login/completeSignup'
 // import DatePicker from 'react-datepicker';
 // import { Dropdown } from 'react-bootstrap';
 
 const Dashboard1 = (props) => {
     console.log(props)
-    // if(props.user.flow === "signup") {
-    //     return (
-    //         <CompleteSignup />
-    //     )
-    // }
+    if(props.user && props.user.flow === "signup") {
+        return (
+            <CompleteSignup user={props.user} />
+        )
+    }
+    if(!props.user) {
+        return (
+            <Homepage />
+        )
+
+
+    }
     return (
         <div>
             <div className="row proBanner">
