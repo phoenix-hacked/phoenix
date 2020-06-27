@@ -4,13 +4,13 @@ import styles from './index.module.css';
 const Homepage = () => {
   return (
     <div>
-        <div className="row proBanner">
+        <div className="row proBanner my-4">
           <div className="col-12">
-            <span className="d-flex align-items-center purchase-popup py-5 pr-0">
+            <span className={`d-flex align-items-center pr-0 ${styles.flexPanel}`}>
               <div className="col-6 display-3 text-dark">
                 <strong>Sahayak</strong> a place for people who want to grow together
                 </div>
-                <div className="col-6">
+                <div className={`col-6 d-flex ${styles.flexImage}`}>
               <img src={require("../../assets/images/friends.svg")} className={`w-100 ${styles.display}`} />
               </div>
             </span>

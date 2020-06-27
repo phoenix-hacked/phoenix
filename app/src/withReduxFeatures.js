@@ -1,9 +1,13 @@
 import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import {Provider} from 'react-redux';
 import promise from 'redux-promise-middleware';
 import {CounterReducer} from './redux/counter';
 import {RandomReducer} from './redux/random';
+import {ProfileReducer} from './redux/profile';
 import withProvider from './withProvider';
+
+import sagas from './sagas';
 
 /**
  * Create root reducer, containing
@@ -12,7 +16,10 @@ import withProvider from './withProvider';
 const rootReducer = combineReducers({
   count: CounterReducer,
   random: RandomReducer,
+  profile: ProfileReducer,
 });
+
+const sagaMiddleware = createSagaMiddleware();
 
 /**
  * Initialize Redux Dev Tools,
@@ -26,8 +33,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /** Create Redux store with root reducer and middleware included */
 export const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(promise))
+  composeEnhancers(applyMiddleware(sagaMiddleware))
 );
+
+sagaMiddleware.run(sagas);
 
 /**
  * Create HOC, which wraps given Component with Redux Provider

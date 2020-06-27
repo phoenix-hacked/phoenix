@@ -1,6 +1,11 @@
 .display {
   padding: 72px;
-  margin: -48px 20px;
+  margin: -60px 20px;
   background: #9bc0dd;
   border-radius: 200px 0 0 150px;
+}
+
+.flexPanel {
+  height: 60vh;
+  background: white;
 }

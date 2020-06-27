@@ -28,6 +28,7 @@ const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
+const Profile = lazy(() => import('../Profile/Profile'));
 
 class AppRoutes extends Component {
   render () {
@@ -36,6 +37,7 @@ class AppRoutes extends Component {
         <Switch>
           <Route exact path="/dashboard" component={ Dashboard } />
           <Route exact path="/homepage" component={ Homepage } />
+          <Route exact path="/profile" component={ Profile } />
 
           <Route path="/basic-ui/buttons" component={ Buttons } />
           <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
