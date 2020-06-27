@@ -26,21 +26,18 @@ const Register1 = lazy(() => import('../Library/user-pages/Register'));
 
 const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 
-<<<<<<< HEAD
 const GoogleLogin = lazy(() => import('../Login'));
 
-=======
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
->>>>>>> d4913bca63ff4b7f536a5166a41afe2bb9fbedc8
 
 class AppRoutes extends Component {
   render() {
     return (
       <Suspense fallback={<Spinner />}>
         <Switch>
-          <Route exact path="/dashboard" component={ Dashboard } />
-          <Route exact path="/homepage" component={ Homepage } />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/homepage" component={Homepage} />
 
           <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
