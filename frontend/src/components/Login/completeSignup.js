@@ -28,7 +28,7 @@ const CompleteSignup = (props) => {
     event.preventDefault();
     axios({
       method: 'put',
-      url: `${process.env.REACT_APP_BACKEND_SERVICE}/users/${userID}`,
+      url: `/api/users/${userID}`,
       data: { "first_name": first_name, "last_name": last_name, "user_type": type, "status": "active" },
       headers: { 'Auth': JSON.stringify(props.userToken) },
     })
