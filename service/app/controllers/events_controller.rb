@@ -5,6 +5,10 @@ class EventsController < ActionController::API
     render json: list_events, status: 200
   end
 
+  def create
+    event = Event.create!(create_events_params)
+  end
+
   def user_events
     response = current_user.admin? ? list_events : list_member_events
     render json: response, status: 200
@@ -36,5 +40,9 @@ class EventsController < ActionController::API
 
   def user_events_params
     params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :tags)
+  end
+
+  def create_events_params
+    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :meeting_link, :name, :address, :user_id, :mentor_id, :max_participants, :description, tags:[])
   end
 end
