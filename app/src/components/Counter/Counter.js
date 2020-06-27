@@ -1,8 +1,8 @@
 import React from 'react';
-import {useCountValue, useActions} from '../../redux/counter';
+import { useCountValue, useActions } from '../../redux/counter';
 import classes from './Counter.module.css';
 
-const Counter = () => {
+const Counter = (props) => {
   /**
    *  Get count value from Redux store. We defined selector
    *  (state => state.counter.value) inside counter feature folder,
@@ -11,7 +11,7 @@ const Counter = () => {
   const count = useCountValue();
 
   /** Create incrementCounter action, using custom hook from feature */
-  const {incrementCounter} = useActions();
+  const { incrementCounter } = useActions();
 
   return (
     <div className={classes.counter}>
@@ -25,7 +25,10 @@ const Counter = () => {
       <div>
         Total value: <strong>{count}</strong>
       </div>
-    </div>
+
+      <img src={`${props.user.profileImg}`} className="rounded-circle display-pic" alt="..."></img>
+      <button variant="danger" onClick={props.logout}>Logout</button>
+    </div >
   );
 };
 
