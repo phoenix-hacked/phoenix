@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :users, only: [:update, :show]
 
-  resources :events, only: [:index], path: 'events' do
+  resources :events, only: [:index, :create], path: 'events' do
     collection do
       get :user_events
     end

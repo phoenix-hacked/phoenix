@@ -91,8 +91,6 @@ const Home = (props) => {
         setLoggedIn(true);
         setUserToken(userToken);
         setCookie('ereventapp', profileImg)
-        toastr.success(`Welcome ${name}`);
-
       }).catch(function (error) {
         toastr.error('User not found, signup to continue');
         signOut();

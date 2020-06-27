@@ -20,7 +20,6 @@ class Sidebar extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(this.props)
     if(this.props.location !== prevProps.location) {
       this.onRouteChanged();
     }
@@ -99,7 +98,7 @@ class Sidebar extends Component {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <button className="btn btn-success btn-block">Open mentorship <i className="mdi mdi-plus"></i></button>
+              <Link to="/events"><button className="btn btn-success btn-block"> Add Event <i className="mdi mdi-plus"></i></button></Link>
             </div>
           </li>
           <li className={this.isPathActive('/dashboard') ? 'nav-item active' : 'nav-item'}>

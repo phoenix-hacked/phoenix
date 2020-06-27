@@ -26,6 +26,8 @@ const Register1 = lazy(() => import('../Library/user-pages/Register'));
 
 const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 
+const EventForm = lazy(() => import('../Library/events/addEvent'));
+
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
 
@@ -38,6 +40,8 @@ const AppRoutes = (prop) => {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
         <Route exact path="/dashboard1" exact render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
+        <Route exact path="/events" exact render={(props) => <EventForm {...props} userToken={prop.userToken} user={prop.user} />} />
+
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
