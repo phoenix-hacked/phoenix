@@ -1,4 +1,4 @@
-import React, { Component,Suspense, lazy } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Spinner from '../Library/shared/Spinner';
@@ -31,43 +31,40 @@ const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
 
-class AppRoutes extends Component {
-  render () {
-    return (
-      <Suspense fallback={<Spinner/>}>
-        <Switch>
-          <Route exact path="/dashboard" component={ Dashboard } />
-          <Route exact path="/homepage" component={ Homepage } />
+const Dashboard1 = lazy(() => import('../Library/dashboard/Dashboard1'));
 
-          <Route path="/basic-ui/buttons" component={ Buttons } />
-          <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
-          <Route path="/basic-ui/typography" component={ Typography } />
+const AppRoutes = (prop) => {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <Switch>
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/homepage" component={Homepage} />
+        <Route exact path="/dashboard1" exact render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
 
-          <Route path="/form-Elements/basic-elements" component={ BasicElements } />
+        <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
           <Route path="/tables/basic-table" component={ BasicTable } />
           <Route path="/tables/mentee-table" component={ MenteeTable } />
           <Route path="/tables/mentor-table" component={ MentorTable } />
 
-          <Route path="/icons/font-awesome" component={ FontAwesome } />
+        <Route path="/icons/font-awesome" component={FontAwesome} />
 
-          <Route path="/charts/chart-js" component={ ChartJs } />
-
-
-          <Route path="/user-pages/login-1" component={ Login } />
-          <Route path="/user-pages/register-1" component={ Register1 } />
-
-          <Route path="/user-pages/error-404" component={ Error404 } />
-          <Route path="/user-pages/error-500" component={ Error500 } />
-
-          <Route path="/user-pages/blank-page" component={ BlankPage } />
+        <Route path="/charts/chart-js" component={ChartJs} />
 
 
-          <Redirect to="/dashboard" />
-        </Switch>
-      </Suspense>
-    );
-  }
+        <Route path="/user-pages/login-1" component={Login} />
+        <Route path="/user-pages/register-1" component={Register1} />
+
+        <Route path="/user-pages/error-404" component={Error404} />
+        <Route path="/user-pages/error-500" component={Error500} />
+
+        <Route path="/user-pages/blank-page" component={BlankPage} />
+
+
+        <Redirect to="/dashboard1" />
+      </Switch>
+    </Suspense>
+  );
 }
 
 export default AppRoutes;
