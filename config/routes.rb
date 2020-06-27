@@ -5,4 +5,9 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     resources :users, only: [:update, :show]
   end
+
+  # That way Rails will pass anything it doesn’t match over to frontend/index.html so that React Router can take over
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
 end
