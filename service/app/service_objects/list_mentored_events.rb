@@ -14,6 +14,7 @@ class ListMentoredEvents
       participants_number = event.event_participants.count
       { id: event.id,
         title: event.name,
+        description: event.description,
         event_type: event.event_type,
         status: event.status,
         address: event.address,

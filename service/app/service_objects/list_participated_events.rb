@@ -12,6 +12,7 @@ class ListParticipatedEvents
     events.map do |event|
       { id: event.id,
         title: event.name,
+        description: event.description,
         event_type: event.event_type,
         status: event.status,
         address: event.address,
