@@ -12,6 +12,8 @@ const Typography = lazy(() => import('../Library/basic-ui/Typography'));
 const BasicElements = lazy(() => import('../Library/form-elements/BasicElements'));
 
 const BasicTable = lazy(() => import('../Library/tables/BasicTable'));
+const MenteeTable = lazy(() => import('../Library/tables/MenteeTable'));
+const MentorTable = lazy(() => import('../Library/tables/MentorTable'));
 
 const FontAwesome = lazy(() => import('../Library/icons/FontAwesome'));
 
@@ -41,7 +43,9 @@ const AppRoutes = (prop) => {
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
-        <Route path="/tables/basic-table" component={BasicTable} />
+          <Route path="/tables/basic-table" component={ BasicTable } />
+          <Route path="/tables/mentee-table" component={ MenteeTable } />
+          <Route path="/tables/mentor-table" component={ MentorTable } />
 
         <Route path="/icons/font-awesome" component={FontAwesome} />
 
