@@ -13,5 +13,13 @@ class Event < ApplicationRecord
     COMPLETED => 'completed',
     CANCELLED => 'cancelled',
     ARCHIVED => 'archived'
-  }
+  }.freeze
+
+  VIRTUAL = 0
+  PHYSICAL = 1
+
+  EVENT_TYPES = {
+    VIRTUAL => 'virtual',
+    PHYSICAL => 'physical'
+  }.freeze
 end
