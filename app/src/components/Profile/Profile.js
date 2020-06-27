@@ -21,6 +21,7 @@ const Profile = (props) => {
   if(!profileInfo.profile || !Object.keys(profileInfo.profile).length) {
     return null;
   }
+  const profileDetails = Object.assign({}, profileInfo.profile, { tags: (profileInfo.profile.tags || []).map((tag) => ({label: tag, value: tag}))});
   const submitValues = (values) => {
     const valuesObj = {
       first_name: values.first_name,
@@ -54,7 +55,7 @@ const Profile = (props) => {
               <div className="card">
                 <div className="card-body">
                   <Formik
-                      initialValues={profileInfo.profile}
+                      initialValues={profileDetails}
                       onSubmit={async values => {
                         submitValues(values);
                       }}

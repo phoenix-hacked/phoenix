@@ -21,7 +21,7 @@ const mock_data = {
     github: "github.com/bats",
     twitter: "twitter.com/nirdosh17",
   },
-  tags: [{ value: 'AI', label: 'AI' }]
+  tags: ['AI']
 };
 
 
