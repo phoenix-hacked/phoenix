@@ -1,4 +1,4 @@
-import React, { Component,Suspense, lazy } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Spinner from '../Library/shared/Spinner';
@@ -26,34 +26,38 @@ const Register1 = lazy(() => import('../Library/user-pages/Register'));
 
 const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 
+const GoogleLogin = lazy(() => import('../Login'));
+
 
 class AppRoutes extends Component {
-  render () {
+  render() {
     return (
-      <Suspense fallback={<Spinner/>}>
+      <Suspense fallback={<Spinner />}>
         <Switch>
-          <Route exact path="/dashboard" component={ Dashboard } />
+          <Route exact path="/dashboard" component={Dashboard} />
 
-          <Route path="/basic-ui/buttons" component={ Buttons } />
-          <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
-          <Route path="/basic-ui/typography" component={ Typography } />
+          <Route path="/basic-ui/buttons" component={Buttons} />
+          <Route path="/basic-ui/dropdowns" component={Dropdowns} />
+          <Route path="/basic-ui/typography" component={Typography} />
 
-          <Route path="/form-Elements/basic-elements" component={ BasicElements } />
+          <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
-          <Route path="/tables/basic-table" component={ BasicTable } />
+          <Route path="/tables/basic-table" component={BasicTable} />
 
-          <Route path="/icons/font-awesome" component={ FontAwesome } />
+          <Route path="/icons/font-awesome" component={FontAwesome} />
 
-          <Route path="/charts/chart-js" component={ ChartJs } />
+          <Route path="/charts/chart-js" component={ChartJs} />
 
 
-          <Route path="/user-pages/login-1" component={ Login } />
-          <Route path="/user-pages/register-1" component={ Register1 } />
+          <Route path="/user-pages/login-1" component={Login} />
+          <Route path="/user-pages/register-1" component={Register1} />
 
-          <Route path="/user-pages/error-404" component={ Error404 } />
-          <Route path="/user-pages/error-500" component={ Error500 } />
+          <Route path="/user-pages/error-404" component={Error404} />
+          <Route path="/user-pages/error-500" component={Error500} />
 
-          <Route path="/user-pages/blank-page" component={ BlankPage } />
+          <Route path="/user-pages/blank-page" component={BlankPage} />
+
+          <Route path="/login" component={GoogleLogin} />
 
 
           <Redirect to="/dashboard" />

@@ -4,19 +4,24 @@ class User < ApplicationRecord
   has_many :event_participants
   has_many :event_ratings
 
-  TYPES = {
-    ADMIN => 'admin',
-    MEMBER => 'member'
-  }
-
   ADMIN = 0
   MEMBER = 1
 
+  ROLES = {
+    ADMIN => 'admin',
+    MEMBER => 'member'
+  }.freeze
+
+  USER_TYPE = {
+    0 => 'individual',
+    1 => 'institute',
+  }.freeze
+
   def admin?
-    type == ADMIN
+    role == ADMIN
   end
 
   def member?
-    type == MEMBER
+    role == MEMBER
   end
 end
