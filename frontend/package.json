@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@mdi/font": "^5.3.45",
     "@testing-library/jest-dom": "^5.9.0",
