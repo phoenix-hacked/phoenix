@@ -117,7 +117,7 @@ const Navbar = (props) => {
             <Dropdown alignRight>
               <Dropdown.Toggle className="nav-link count-indicator bg-transparent">
                 <span className="profile-text">{user.name}</span>
-                <img className="img-xs rounded-circle" src={require("../../../assets/images/faces/face8.jpg")} alt="Profile" />
+                <img className="img-xs rounded-circle" src={user.profileImg} alt="Profile" />
               </Dropdown.Toggle>
               <Dropdown.Menu className="preview-list navbar-dropdown pb-3">
                 <Dropdown.Item className="dropdown-item p-0 preview-item d-flex align-items-center border-bottom" href="!#" onClick={evt => evt.preventDefault()}>
@@ -142,7 +142,7 @@ const Navbar = (props) => {
                 <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
                   Check Inbox
                   </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
+                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={props.logout}>
                   Sign Out
                   </Dropdown.Item>
               </Dropdown.Menu>
