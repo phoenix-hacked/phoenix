@@ -9,14 +9,19 @@ import Sidebar from '../Library/shared/Sidebar';
 import Footer from '../Library/shared/Footer';
 import SimpleNavbar from 'components/Library/shared/SimpleNavbar';
 
+import Home from './Home'
+
 const App = (props) => {
+  return (
+    <Home />
+  )
   const [isFullPageLayout, setIsFullPageLayout] = React.useState(false);
   const onRouteChanged = () => {
     console.log("ROUTE CHANGED", props.location.pathname);
     window.scrollTo(0, 0);
     const fullPageLayoutRoutes = ['/user-pages/login-1', '/user-pages/login-2', '/user-pages/register-1', '/user-pages/register-2', '/user-pages/lockscreen', '/error-pages/error-404', '/error-pages/error-500', '/general-pages/landing-page', '/dashboard'];
-    for ( let i = 0; i < fullPageLayoutRoutes.length; i++ ) {
-      if (props.location.pathname === fullPageLayoutRoutes[i]) {
+    for(let i = 0; i < fullPageLayoutRoutes.length; i++) {
+      if(props.location.pathname === fullPageLayoutRoutes[i]) {
         setIsFullPageLayout(true);
         document.querySelector('.page-body-wrapper') ? document.querySelector('.page-body-wrapper').classList.add('full-page-wrapper') : null;
         break;
@@ -30,17 +35,17 @@ const App = (props) => {
     onRouteChanged();
   }, []);
 
-  if (isFullPageLayout) {
+  if(isFullPageLayout) {
     return (
       <div className="container-scroller">
-        <Navbar/>
+        <Navbar />
         <div className="container-fluid page-body-wrapper">
-          <Sidebar/>
+          <Sidebar />
           <div className="main-panel">
             <div className="content-wrapper">
-              <AppRoutes/>
+              <AppRoutes />
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>
@@ -53,9 +58,9 @@ const App = (props) => {
       <div className="container simple-container">
         <div className="main-panel simple-panel">
           <div className="content-wrapper">
-            <AppRoutes/>
+            <AppRoutes />
           </div>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>

@@ -26,44 +26,41 @@ const Register1 = lazy(() => import('../Library/user-pages/Register'));
 
 const BlankPage = lazy(() => import('../Library/user-pages/BlankPage'));
 
-const GoogleLogin = lazy(() => import('../Login'));
-
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
 
-class AppRoutes extends Component {
-  render() {
-    return (
-      <Suspense fallback={<Spinner />}>
-        <Switch>
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/homepage" component={Homepage} />
+const Dashboard1 = lazy(() => import('../Library/dashboard/Dashboard1'));
 
-          <Route path="/form-Elements/basic-elements" component={BasicElements} />
+const AppRoutes = () => {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <Switch>
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/homepage" component={Homepage} />
+        <Route exact path="/dashboard1" component={Dashboard1} />
 
-          <Route path="/tables/basic-table" component={BasicTable} />
+        <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
-          <Route path="/icons/font-awesome" component={FontAwesome} />
+        <Route path="/tables/basic-table" component={BasicTable} />
 
-          <Route path="/charts/chart-js" component={ChartJs} />
+        <Route path="/icons/font-awesome" component={FontAwesome} />
 
-
-          <Route path="/user-pages/login-1" component={Login} />
-          <Route path="/user-pages/register-1" component={Register1} />
-
-          <Route path="/user-pages/error-404" component={Error404} />
-          <Route path="/user-pages/error-500" component={Error500} />
-
-          <Route path="/user-pages/blank-page" component={BlankPage} />
-
-          <Route path="/login" component={GoogleLogin} />
+        <Route path="/charts/chart-js" component={ChartJs} />
 
 
-          <Redirect to="/dashboard" />
-        </Switch>
-      </Suspense>
-    );
-  }
+        <Route path="/user-pages/login-1" component={Login} />
+        <Route path="/user-pages/register-1" component={Register1} />
+
+        <Route path="/user-pages/error-404" component={Error404} />
+        <Route path="/user-pages/error-500" component={Error500} />
+
+        <Route path="/user-pages/blank-page" component={BlankPage} />
+
+
+        <Redirect to="/dashboard1" />
+      </Switch>
+    </Suspense>
+  );
 }
 
 export default AppRoutes;

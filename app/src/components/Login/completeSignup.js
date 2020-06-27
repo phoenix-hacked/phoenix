@@ -81,10 +81,10 @@ const CompleteSignup = (props) => {
                   </div>
                 </div>
                 <div className="mt-3">
-                  <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/login">Complete</button>
+                  <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/dashboard">Complete</button>
                 </div>
                 <div className="mt-3">
-                  <Link className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/dashboard">Cancel</Link>
+                  <Link className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/homepage">Cancel</Link>
                 </div>
               </form>
             </div>

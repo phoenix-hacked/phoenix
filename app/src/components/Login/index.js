@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { gapi, loadAuth2 } from 'gapi-script'
 import axios from 'axios';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Button, Modal } from 'react-bootstrap';
 import { setCookie, getCookie, eraseCookie } from '../../utils';
 
 import './login.css'
@@ -14,7 +14,7 @@ const GoogleLogin = () => {
   const [loggedIn, setLoggedIn] = useState(getCookie('ereventapp'));
   const [userToken, setUserToken] = useState(null);
 
-  const clientID = '589382407673-41h26lsu2inntfq22p8llo65o23us6sc.apps.googleusercontent.com'
+  const clientID = process.env.REACT_APP_CLIENT_ID
   useEffect(() => {
     async function fetchAuth() {
       let auth2 = await loadAuth2(clientID, '')
@@ -78,6 +78,7 @@ const GoogleLogin = () => {
       });
   }
 
+
   const signOut = () => {
     eraseCookie('ereventapp');
     let auth2 = gapi.auth2.getAuthInstance();
@@ -87,36 +88,31 @@ const GoogleLogin = () => {
       console.log('User signed out.');
     });
   }
+
   if(loggedIn) {
     if(!userToken) {
       return <Spinner animation="border" />
     }
     if(user.flow == "signup") {
       return (
-        <CompleteSignup user={user} logout={signOut} userToken={userToken} />
+        <Modal show={true} size="lg" onHide={true} animation={true}>
+          <CompleteSignup user={user} logout={signOut} userToken={userToken} />
+        </Modal>
       );
     } else {
       return (
-        <Dashboard user={user} logout={signOut} userToken={userToken} />
+        <Button variant="danger" onClick={signOut}>Logout</Button>
       )
     }
 
   }
-  return (
-    <div className="login-container">
-      <div className="login-box">
-        <div className="wrapper fadeInDown">
-          <div id="formContent">
-            <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
-              Login with Google
-            </button>
-            <div id="formFooter">
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
+
+
+  return (
+    <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
+      Continue with Google
+    </button>
   );
 }
 
