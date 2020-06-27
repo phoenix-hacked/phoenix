@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     collection do
       get :user_events
     end
+  end
 end
