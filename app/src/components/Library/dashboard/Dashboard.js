@@ -244,7 +244,7 @@ amountDueBarOptions = {
 toggleProBanner() {
   document.querySelector('.proBanner').classList.toggle("hide");
 }
-  
+
   render () {
     return (
       <div>
