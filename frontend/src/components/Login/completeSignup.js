@@ -49,7 +49,7 @@ const CompleteSignup = (props) => {
     <div>
       <div className="d-flex align-items-center auth px-0">
         <div className="row w-100 mx-0">
-          <div className="col-lg-4 mx-auto">
+          <div className="col-lg-6 mx-auto">
             <div className="auth-form-light text-left py-5 px-4 px-sm-5">
               <div className="brand-logo">
                 <img src={require("../../assets/images/logo.png")} alt="logo" />
