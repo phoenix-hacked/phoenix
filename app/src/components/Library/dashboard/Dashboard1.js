@@ -1,5 +1,8 @@
 import React from 'react';
 import Homepage from '../../Homepage'
+import MenteeTable from '../tables/MenteeTable';
+import MentorTable from '../tables/MentorTable';
+
 
 import CompleteSignup from '../../Login/completeSignup'
 // import DatePicker from 'react-datepicker';
@@ -105,7 +108,9 @@ const Dashboard1 = (props) => {
           </div>
         </div>
       </div>
-
+      
+      <MentorTable />
+      <MenteeTable />
     </div>
   );
 }

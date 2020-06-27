@@ -9,8 +9,7 @@ export class BasicTable extends Component {
           <h1 className="page-title"> Upcoming Events</h1>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>Tables</a></li>
-              <li className="breadcrumb-item active" aria-current="page">Mentee tables</li>
+              <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>View All</a></li>
             </ol>
           </nav>
         </div>
