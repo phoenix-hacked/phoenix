@@ -9,9 +9,8 @@ const EventForm = (props) => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [tag, setTag] = useState([])
-
   const [virtual, setVirtual] = useState(false);
-  const [physical, setPhysical] = useState(false)
+  const [physical, setPhysical] = useState(false);
 
   const handleStartDate = (event) => {
     setStartDate(event.target.value)
@@ -30,8 +29,7 @@ const EventForm = (props) => {
     const tags = selected.map(s => {
       return s.value
     })
-    setTag(tags)
-
+    setTag(tags);
   }
 
   const opts = [{ value: 'Marketing', label: 'Marketing' }, { value: 'Machine Learning', label: 'Machine Learning' }, { value: 'Accounting', label: 'Accounting' }]
@@ -84,8 +82,6 @@ const EventForm = (props) => {
       });
   }
 
-
-
   return (
     <div>
       <div className="d-flex justify-content-center">
@@ -108,7 +104,6 @@ const EventForm = (props) => {
             <Form.Control as="textarea" rows="2" placeholder="Description" autoComplete="off" required />
           </Col>
         </Form.Group>
-
         <Form.Group as={Row} controlId="max_participants">
           <Form.Label column sm={2}>
             Max Participants*
@@ -117,8 +112,6 @@ const EventForm = (props) => {
             <Form.Control type="number" placeholder="Max Participants" autoComplete="off" required />
           </Col>
         </Form.Group>
-
-
         <Form.Group as={Row} controlId="event_type">
           <Form.Label as="legend" column sm={2}>
             Type*
@@ -131,7 +124,6 @@ const EventForm = (props) => {
             </Form.Control>
           </Col>
         </Form.Group>
-
         <Form.Group as={Row} controlId="address">
           <Form.Label column sm={2}>
             Address
@@ -149,8 +141,6 @@ const EventForm = (props) => {
             <Form.Control type="text" placeholder="Meeting Link" autoComplete="off" disabled={!virtual} required={virtual} />
           </Col>
         </Form.Group>
-
-
         <Form.Group as={Row} controlId="start_datetime">
           <Form.Label column sm={2}>
             Start*
@@ -196,7 +186,6 @@ const EventForm = (props) => {
           <button className="btn btn-primary mr-2" type="submit">
             Save Changes </button>
         </div>
-
       </Form >
     </div >
   )
