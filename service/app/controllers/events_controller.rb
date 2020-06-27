@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::API
-
+class EventsController < ActionController::API
   def index
     render json: list_events, status: 200
   end
@@ -14,11 +13,11 @@ class ApplicationController < ActionController::API
   private
 
   def list_events
-    Events.where(list_params)
+    Event.where(list_params)
   end
 
   def list_params
-    params.slice(:type, :status, :start_datetime, :end_datetime, :category, :user_id, :mentor_id)
+    params.permit(:user_id, :type, :status, :start_datetime, :end_datetime, :category, :mentor_id)
   end
 
   def list_member_events
