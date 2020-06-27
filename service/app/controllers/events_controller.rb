@@ -17,7 +17,7 @@ class EventsController < ActionController::API
   end
 
   def list_params
-    params.permit(:user_id, :type, :status, :start_datetime, :end_datetime, :category, :mentor_id)
+    params.permit(:user_id, :event_type, :status, :start_datetime, :end_datetime, :category, :mentor_id)
   end
 
   def list_member_events
@@ -35,6 +35,6 @@ class EventsController < ActionController::API
   end
 
   def user_events_params
-    params.slice(:type, :status, :start_datetime, :end_datetime, :category, :tags)
+    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :tags)
   end
 end
