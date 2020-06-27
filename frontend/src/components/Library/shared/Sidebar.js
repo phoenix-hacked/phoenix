@@ -84,15 +84,15 @@ class Sidebar extends Component {
                       </div>
                     </div>
                   </Dropdown.Item>
-                  <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={evt => evt.preventDefault()}>
+                  {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={evt => evt.preventDefault()}>
                     Manage Accounts
                   </Dropdown.Item>
                   <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={evt => evt.preventDefault()}>
                     Change Password
-                  </Dropdown.Item>
-                  <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={evt => evt.preventDefault()}>
+                  </Dropdown.Item> */}
+                  {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={evt => evt.preventDefault()}>
                     Check Inbox
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                   <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center text-small" onClick={this.props.logout}>
                     Sign Out
                   </Dropdown.Item>

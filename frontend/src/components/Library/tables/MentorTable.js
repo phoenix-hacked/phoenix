@@ -6,7 +6,7 @@ export class BasicTable extends Component {
     return (
       <div>
         <div className="page-header">
-          <h1 className="page-title"> Upcoming Events</h1>
+          <h1 className="page-title">Upcoming Events</h1>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>View All</a></li>
@@ -23,11 +23,11 @@ export class BasicTable extends Component {
                     <thead>
                       <tr>
                         <th>Topic</th>
-                        <th>Category</th>
+                        <th>Field</th>
                         <th>Event Type</th>
                         <th>Start Date</th>
                         <th>Deadline</th>
-                        <th>Paticpatant No:</th>
+                        <th>Attendees</th>
                         <th>Status</th>
                         <th>Rating</th>
                       </tr>
@@ -47,7 +47,7 @@ export class BasicTable extends Component {
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
-                        </td> 
+                        </td>
                       </tr>
                       <tr>
                         <td>Beauty/Wellness Consultant</td>
@@ -63,7 +63,7 @@ export class BasicTable extends Component {
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
-                        </td>  
+                        </td>
                       </tr>
                       <tr>
                         <td>Delegation Training</td>
@@ -79,7 +79,7 @@ export class BasicTable extends Component {
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
-                        </td> 
+                        </td>
                       </tr>
                       <tr>
                         <td>Animation</td>
@@ -95,7 +95,7 @@ export class BasicTable extends Component {
                         <span className="fa fa-star" style={{color: "orange"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
-                        </td> 
+                        </td>
                       </tr>
                       <tr>
                         <td>Beekeeping Training</td>
@@ -111,7 +111,7 @@ export class BasicTable extends Component {
                         <span className="fa fa-star" style={{color: "orange"}}></span>
                         <span className="fa fa-star" style={{color: "orange"}}></span>
                         <span className="fa fa-star" style={{color: "grey"}}></span>
-                        </td> 
+                        </td>
                       </tr>
                     </tbody>
                   </table>

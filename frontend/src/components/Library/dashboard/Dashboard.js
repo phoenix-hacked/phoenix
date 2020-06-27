@@ -44,7 +44,7 @@ export class Dashboard extends Component {
     this.addTodo = this.addTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
     this.inputChangeHandler = this.inputChangeHandler.bind(this);
-  } 
+  }
   statusChangedHandler(event, id) {
     const todo = {...this.state.todos[id]};
     todo.isCompleted = event.target.checked;
@@ -65,7 +65,7 @@ addTodo (event) {
         id: todos.length ? todos[todos.length - 1].id + 1 : 1,
         task: this.state.inputValue,
         isCompleted: false
-        
+
     })
 
     this.setState({
@@ -251,7 +251,7 @@ toggleProBanner() {
         <div className="row proBanner">
           <div className="col-12">
             <span className="d-flex align-items-center purchase-popup">
-              <p>Need help on how to use sahayak?</p>
+              <p>Need help on how to use Sahayak?</p>
               <a href="#" rel="noopener noreferrer" target="_blank" className="ml-auto btn purchase-button">Get a tour</a>
               <i className="mdi mdi-close bannerClose" onClick={this.toggleProBanner}></i>
             </span>
@@ -365,11 +365,11 @@ toggleProBanner() {
               <div className="card-body">
                 <h4 className="card-title">Todo</h4>
                 <form  className="add-items d-lg-flex" onSubmit={this.addTodo}>
-                  <input 
-                      type="text" 
-                      className="form-control h-auto" 
-                      placeholder="What do you need to do today?" 
-                      value={this.state.inputValue} 
+                  <input
+                      type="text"
+                      className="form-control h-auto"
+                      placeholder="What do you need to do today?"
+                      value={this.state.inputValue}
                       onChange={this.inputChangeHandler}
                       required />
                   <button type="submit" className="btn btn-primary font-weight-bold ml-0 mt-2 mt-lg-0">Add</button>
@@ -377,7 +377,7 @@ toggleProBanner() {
                 <div className="list-wrapper">
                   <ul className="d-flex flex-column todo-list todo-padding-lg">
                     {this.state.todos.map((todo, index) =>{
-                        return <ListItem 
+                        return <ListItem
                         isCompleted={todo.isCompleted}
                         changed={(event) => this.statusChangedHandler(event, index)}
                         key={todo.id}
@@ -524,7 +524,7 @@ toggleProBanner() {
                     <p className="mb-0">Payment for next week</p>
                   </div>
                   <div className="col-md-5 d-flex align-items-end mt-4 mt-md-0">
-                    <Bar data={this.amountDueBarData} options={this.amountDueBarOptions} />    
+                    <Bar data={this.amountDueBarData} options={this.amountDueBarOptions} />
                   </div>
                 </div>
               </div>
@@ -798,7 +798,7 @@ toggleProBanner() {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     );
   }
 }
@@ -806,10 +806,10 @@ const ListItem = (props) => {
   return (
       <li className={(props.isCompleted ? 'completed' : null)}>
           <div className="form-check form-check-success m-0 align-items-start">
-              <label htmlFor="" className="form-check-label font-weight-medium"> 
-                  <input className="checkbox" type="checkbox" 
-                      checked={props.isCompleted} 
-                      onChange={props.changed} 
+              <label htmlFor="" className="form-check-label font-weight-medium">
+                  <input className="checkbox" type="checkbox"
+                      checked={props.isCompleted}
+                      onChange={props.changed}
                       /> {props.children} <i className="input-helper"></i>
               </label>
           </div>

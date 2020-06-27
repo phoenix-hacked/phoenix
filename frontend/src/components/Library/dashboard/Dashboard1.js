@@ -24,7 +24,7 @@ const Dashboard1 = (props) => {
       <div className="row proBanner">
         <div className="col-12">
           <span className="d-flex align-items-center purchase-popup">
-            <p>Need help on how to use sahayak?</p>
+            <p>Need help on how to use Sahayak?</p>
             <a href="#" rel="noopener noreferrer" target="_blank" className="ml-auto btn purchase-button">Get a tour</a>
             <i className="mdi mdi-close bannerClose"></i>
           </span>
@@ -108,7 +108,7 @@ const Dashboard1 = (props) => {
           </div>
         </div>
       </div>
-      
+
       <MentorTable />
       <MenteeTable />
     </div>

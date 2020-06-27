@@ -39,10 +39,11 @@ const AppRoutes = (prop) => {
   return (
     <Suspense fallback={<Spinner />}>
       <Switch>
+        <Route exact path="/" render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
         <Route exact path="/profile" render={(props) => <Profile {...props} user={prop.user} />} />
-        <Route exact path="/dashboard1" render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
+
         <Route exact path="/events" exact render={(props) => <EventForm {...props} userToken={prop.userToken} user={prop.user} />} />
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
@@ -65,7 +66,7 @@ const AppRoutes = (prop) => {
         <Route path="/user-pages/blank-page" component={BlankPage} />
 
 
-        <Redirect to="/dashboard1" />
+        {/* <Redirect to="/" /> */}
       </Switch>
     </Suspense>
   );

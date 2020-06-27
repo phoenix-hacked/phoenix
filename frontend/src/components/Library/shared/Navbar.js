@@ -15,17 +15,17 @@ const Navbar = (props) => {
         </button>
         <ul className="navbar-nav navbar-nav-left header-links">
           <li className="nav-item d-none d-md-flex">
-            <a href="!#" onClick={evt => evt.preventDefault()} className="nav-link">Schedule <span className="badge badge-primary ml-1">New</span>
+            <a href="/" className="nav-link">Home
             </a>
           </li>
           <li className="nav-item active d-none d-xl-flex">
-            <a href="!#" onClick={evt => evt.preventDefault()} className="nav-link">
-              <i className="mdi mdi-elevation-rise"></i>Reports</a>
+            <a href="/profile" className="nav-link">
+              <i className="mdi mdi-elevation-rise"></i>My Profile</a>
           </li>
-          <li className="nav-item d-none d-lg-flex">
+          {/* <li className="nav-item d-none d-lg-flex">
             <a href="!#" onClick={evt => evt.preventDefault()} className="nav-link">
               <i className="mdi mdi-bookmark-plus-outline"></i>Score</a>
-          </li>
+          </li> */}
         </ul>
         <ul className="navbar-nav navbar-nav-right ml-lg-auto">
           <li className="nav-item  nav-profile border-0">
@@ -120,7 +120,7 @@ const Navbar = (props) => {
                 <img className="img-xs rounded-circle" src={user.profileImg} alt="Profile" />
               </Dropdown.Toggle>
               <Dropdown.Menu className="preview-list navbar-dropdown pb-3">
-                <Dropdown.Item className="dropdown-item p-0 preview-item d-flex align-items-center border-bottom" href="!#" onClick={evt => evt.preventDefault()}>
+                <Dropdown.Item className="dropdown-item p-0 preview-item d-flex align-items-center border-bottom" href="/profile" onClick={evt => evt.preventDefault()}>
                   <div className="d-flex">
                     <div className="py-3 px-4 d-flex align-items-center justify-content-center">
                       <i className="mdi mdi-bookmark-plus-outline mr-0"></i>
@@ -133,15 +133,15 @@ const Navbar = (props) => {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" onClick={evt => evt.preventDefault()}>
+                {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" onClick={evt => evt.preventDefault()}>
                   Manage Accounts
-                  </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
-                  Change Password
-                  </Dropdown.Item>
-                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
+                  </Dropdown.Item> */}
+                {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
+                  My Profile
+                  </Dropdown.Item> */}
+                {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
                   Check Inbox
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                 <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={props.logout}>
                   Sign Out
                   </Dropdown.Item>

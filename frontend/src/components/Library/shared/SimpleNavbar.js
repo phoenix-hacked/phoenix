@@ -9,7 +9,7 @@ const SimpleNavbar = (props) => {
       <div className="navbar-menu-wrapper d-flex align-items-center justify-content-between">
         <a className="sidebar-brand brand-logo" href="index.html"><img src={require("../../../assets/images/logo-dark.png")} className="col-3" alt="logo" /></a>
         <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
-          Continue with Google
+          Sign in with Google
             </button>
       </div>
     </nav>

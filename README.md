@@ -1,4 +1,6 @@
 # Sahayak App - Team Phoenix
+http://sahayak-np.herokuapp.com/
+
 A platform which aims to bridge the gap between Academics and Industries provides various opportunities to students or anyone so that they can be well groomed and competent enough to work in the Professional environment.
 
 Sahayak aims to connect individuals and organizations to provide or receive mentorship which have competitive advantage to all them:
@@ -46,7 +48,8 @@ yarn start
     rails s
 
 #### 3. Run frontend and backend combined
-    bin/rake start
+    make build
+    make run
 
 
 ## Heroku Setup

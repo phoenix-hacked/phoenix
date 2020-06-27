@@ -111,7 +111,7 @@ const GoogleLogin = () => {
 
   return (
     <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
-      Continue with Google
+      Sign in with Google
     </button>
   );
 }
