@@ -5,6 +5,8 @@ import { Spinner } from 'react-bootstrap';
 import Counter from '../Counter';
 import { setCookie, getCookie, eraseCookie } from '../../utils';
 
+import './login.css'
+
 const GoogleLogin = () => {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(getCookie('ereventapp'));
@@ -38,16 +40,26 @@ const GoogleLogin = () => {
     const name = userToken.getBasicProfile().getName();
     const profileImg = userToken.getBasicProfile().getImageUrl();
 
-    setUser({
-      name: name,
-      profileImg: profileImg,
-      role: 1,
-      userID: 1,
-      email: email,
-    });
-    setLoggedIn(true);
-    setUserToken(userToken);
-    setCookie('ereventapp', profileImg)
+    axios.post(`${process.env.REACT_APP_BACKEND_SERVICE}/sessions`, userToken)
+      .then(function (response) {
+        setUser({
+          name: name,
+          profileImg: profileImg,
+          type: response.data.user.type,
+          flow: response.data.flow,
+          userID: response.data.user_id,
+          email: email,
+          userDetail: response.data
+        });
+        setLoggedIn(true);
+        setUserToken(userToken);
+        setCookie('ereventapp', profileImg)
+        toastr.success(`Welcome ${name}`);
+
+      }).catch(function (error) {
+        toastr.error('User not found, signup to continue');
+        signOut();
+      })
   }
 
   const attachSignin = (element, auth2) => {
