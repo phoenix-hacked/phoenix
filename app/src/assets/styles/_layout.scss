@@ -415,3 +415,23 @@
     }
   }
 }
+
+//Navbar Simple
+.navbar {
+  &.navbar-simple {
+    &.fixed-top {
+      left: unset;
+    }
+  }
+  .navbar-menu-wrapper {
+    width: 100%;
+  }
+}
+
+.container {
+  &.simple-container {
+    .simple-panel {
+      width: 100%;
+    }
+  }
+}
