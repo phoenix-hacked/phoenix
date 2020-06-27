@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import withReduxFeatures from './withReduxFeatures';
 import App from './components/App';
 import './index.css';
@@ -8,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 /** Wrap App component with store providers */
 const WrappedApp = withReduxFeatures(App);
 
-ReactDOM.render(<WrappedApp />, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><WrappedApp /></BrowserRouter>, document.getElementById('root'));
 
 /**
  * If you want your app to work offline and load faster,
