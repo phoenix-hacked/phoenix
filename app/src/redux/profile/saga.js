@@ -21,7 +21,7 @@ const mock_data = {
     github: "github.com/bats",
     twitter: "twitter.com/nirdosh17",
   },
-  tags: []
+  tags: [{ value: 'AI', label: 'AI' }]
 };
 
 
@@ -34,10 +34,9 @@ export function* watchProfileDataUpdate() {
 }
 
 export function* initiateProfileData(action) {
-  console.log('asdfasdf');
   const { payload } = action;
   try {
-    const profileData = yield call(requestGetProfileData(payload));
+    const profileData = yield call(requestGetProfileData, payload.userId);
     yield put(updateProfileStoreData(payload.userId, profileData));
   } catch (err) {
     yield put(updateProfileStoreData(payload.userId, mock_data));
@@ -47,7 +46,7 @@ export function* initiateProfileData(action) {
 export function* updateProfileData(action) {
   const { payload } = action;
   try {
-    const profileData = yield call(requestUpdateProfileData(payload));
+    const profileData = yield call(requestUpdateProfileData, payload);
     yield put(updateProfileStoreData(payload.userId, profileData));
   } catch (err) {
     // yield put(addCustomAttributeError());

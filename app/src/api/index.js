@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-const API_BASE_PATH=process.env.REACT_APP_BASE_API_URL;
+const API_BASE_PATH=process.env.REACT_APP_BACKEND_SERVICE;
 
 export const requestGetProfileData = async (userId) => {
-  console.log('called');
-  const response = await axios.get(`${API_BASE_PATH}/user/${userId}/profile`);
+  const response = await axios.get(`${API_BASE_PATH}/users/${userId}`);
   return response.data;
 }
 
 export const requestUpdateProfileData = async (payload) => {
   const { userId, userData } = payload;
-  const response = await axios.put(`${API_BASE_PATH}/user/${userId}/profile`, userData);
+  const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, userData);
   return response.data;
 };

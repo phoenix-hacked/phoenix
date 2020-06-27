@@ -39,7 +39,7 @@ const AppRoutes = (prop) => {
       <Switch>
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
-  <Route exact path="/profile" render={(props) => <Profile {...props} user={prop.user} />} />
+        <Route exact path="/profile" render={(props) => <Profile {...props} user={prop.user} />} />
         <Route exact path="/dashboard1" render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
