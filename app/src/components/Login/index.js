@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { gapi, loadAuth2 } from 'gapi-script'
 import axios from 'axios';
-import { Spinner } from 'react-bootstrap';
-import Counter from '../Counter';
+import { Spinner, Button, Modal } from 'react-bootstrap';
 import { setCookie, getCookie, eraseCookie } from '../../utils';
 
 import './login.css'
+
+import CompleteSignup from './completeSignup'
+import Dashboard from 'components/Library/dashboard/Dashboard';
 
 const GoogleLogin = () => {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(getCookie('ereventapp'));
   const [userToken, setUserToken] = useState(null);
 
-  const clientID = '589382407673-41h26lsu2inntfq22p8llo65o23us6sc.apps.googleusercontent.com'
+  const clientID = process.env.REACT_APP_CLIENT_ID
   useEffect(() => {
     async function fetchAuth() {
       let auth2 = await loadAuth2(clientID, '')
@@ -44,10 +46,12 @@ const GoogleLogin = () => {
       .then(function (response) {
         setUser({
           name: name,
+          first_name: response.data.user.first_name,
+          last_name: response.data.user.last_name,
           profileImg: profileImg,
-          type: response.data.user.type,
+          user_type: response.data.user.user_type,
           flow: response.data.flow,
-          userID: response.data.user_id,
+          userID: response.data.user.id,
           email: email,
           userDetail: response.data
         });
@@ -74,6 +78,7 @@ const GoogleLogin = () => {
       });
   }
 
+
   const signOut = () => {
     eraseCookie('ereventapp');
     let auth2 = gapi.auth2.getAuthInstance();
@@ -83,34 +88,31 @@ const GoogleLogin = () => {
       console.log('User signed out.');
     });
   }
+
   if(loggedIn) {
     if(!userToken) {
       return <Spinner animation="border" />
     }
-    return (
-      <Counter user={user} logout={signOut} userToken={userToken} />
+    if(user.flow == "signup") {
+      return (
+        <Modal show={true} size="lg" onHide={true} animation={true}>
+          <CompleteSignup user={user} logout={signOut} userToken={userToken} />
+        </Modal>
+      );
+    } else {
+      return (
+        <Button variant="danger" onClick={signOut}>Logout</Button>
+      )
+    }
 
-    );
   }
-  return (
-    <div className="login-container">
-      <div className="login-box">
-        <div className="wrapper fadeInDown">
-          <div id="formContent">
-            <div className="fadeIn first bg-primary p-3">
-              <img src="https://www.cloudfactory.com/hubfs/img/logo/CloudFactory-Logo-245px.png" id="icon" alt="User Icon" />
-              <p className="logo-er">The Phoenix</p>
-            </div>
-            <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
-              Login with Google
-            </button>
-            <div id="formFooter">
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
+
+
+  return (
+    <button className="loginBtn loginBtn--google mt-5 mb-5" id="customBtn">
+      Continue with Google
+    </button>
   );
 }
 
