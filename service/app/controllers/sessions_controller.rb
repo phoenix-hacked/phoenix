@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if !user
       user = User.create!(parsed_params)
     end
-    flow = user.status ? "login" : "signup"
+    flow = user.user_type ? "login" : "signup"
     render json: { user: user, flow: flow }, status: :ok
   end
 
