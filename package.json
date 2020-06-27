@@ -1,13 +1,9 @@
 {
   "name": "sahahak-app",
   "license": "MIT",
-  "engines": {
-    "node": "10.15.3",
-    "yarn": "1.15.2"
-  },
   "scripts": {
-    "build": "yarn --cwd app install && yarn --cwd app build",
-    "deploy": "cp -a app/build/. public/",
+    "build": "yarn --cwd frontend install && yarn --cwd frontend build",
+    "deploy": "cp -a frontend/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
