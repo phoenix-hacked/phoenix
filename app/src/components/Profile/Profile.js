@@ -22,9 +22,26 @@ const Profile = (props) => {
     return null;
   }
   const submitValues = (values) => {
-    debugger;
+    const valuesObj = {
+      first_name: values.first_name,
+      last_name: values.last_name,
+      email: values.email,
+      about_me: values.about_me,
+      address: values.address,
+      tags: values.tags,
+      experience: {
+        highest_education: values.highest_education,
+        experience_years: values.experience_years,
+        company: values.company,
+      },
+      social: {
+        linkedin: values.linkedin,
+        github: values.github,
+        twitter: values.twitter,
+      }
+    };
     // update the profile details
-    dispatch(updateProfileData(userID, values));
+    dispatch(updateProfileData(userID, valuesObj));
   };
 
   return (

@@ -8,7 +8,7 @@ export const requestGetProfileData = async (userId) => {
 }
 
 export const requestUpdateProfileData = async (payload) => {
-  const { userId, userData } = payload;
-  const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, userData);
+  const { userId, profileData } = payload;
+  const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, profileData);
   return response.data;
 };
