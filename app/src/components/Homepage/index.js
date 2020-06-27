@@ -6,13 +6,13 @@ import GoogleLogin from '../Login/'
 const Homepage = () => {
   return (
     <div>
-      <div className="row proBanner">
-        <div className="col-12">
-          <span className="d-flex align-items-center purchase-popup py-5 pr-0">
-            <div className="col-6 display-3 text-dark">
+      <div className="row proBanner my-4">
+          <div className="col-12">
+            <span className={`d-flex align-items-center pr-0 ${styles.flexPanel}`}>
+              <div className="col-6 display-3 text-dark">
             <h2> <strong>Sahayak,</strong>&nbsp;Bridge the gap between where you are now and the goal you intend to reach!!</h2>
                 </div>
-            <div className="col-6">
+                <div className={`col-6 d-flex ${styles.flexImage}`}>
               <img src={require("../../assets/images/friends.svg")} className={`w-100 ${styles.display}`} />
             </div>
           </span>

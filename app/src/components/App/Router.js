@@ -32,7 +32,7 @@ const EventForm = lazy(() => import('../Library/events/addEvent'));
 
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
-
+const Profile = lazy(() => import('../Profile/Profile'));
 const Dashboard1 = lazy(() => import('../Library/dashboard/Dashboard1'));
 
 const AppRoutes = (prop) => {
@@ -41,9 +41,9 @@ const AppRoutes = (prop) => {
       <Switch>
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
-        <Route exact path="/dashboard1" exact render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
+        <Route exact path="/profile" render={(props) => <Profile {...props} user={prop.user} />} />
+        <Route exact path="/dashboard1" render={(props) => <Dashboard1 {...props} userToken={prop.userToken} user={prop.user} />} />
         <Route exact path="/events" exact render={(props) => <EventForm {...props} userToken={prop.userToken} user={prop.user} />} />
-
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
 

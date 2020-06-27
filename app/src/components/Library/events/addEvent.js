@@ -83,110 +83,109 @@ const EventForm = (props) => {
   }
 
   return (
+
     <div>
       <div className="d-flex justify-content-center">
-        <h4> Add a new event</h4>
-      </div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group as={Row} controlId="name">
-          <Form.Label column sm={2}>
-            Title*
+        <div className="col-lg-6 grid-margin">
+          <div className="card">
+            <div className="card-body">
+              <div className="card-title">
+                Add a new event
+              </div>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group as={Row} controlId="name">
+                  <Form.Label>
+                    Title*
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="text" placeholder="Name" autoComplete="off" required />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="description">
-          <Form.Label column sm={2}>
-            Description*
+                  <Form.Control type="text" placeholder="Name" autoComplete="off" required />
+                </Form.Group>
+                <Form.Group as={Row} controlId="description">
+                  <Form.Label>
+                    Description*
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control as="textarea" rows="2" placeholder="Description" autoComplete="off" required />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="max_participants">
-          <Form.Label column sm={2}>
-            Max Participants*
-              </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="number" placeholder="Max Participants" autoComplete="off" required />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="event_type">
-          <Form.Label as="legend" column sm={2}>
-            Type*
-              </Form.Label>
-          <Col sm={10}>
-            <Form.Control as="select" onChange={handleTypeChange}>
-              <option value="">Please Select</option>
-              <option value="0">Virtual</option>
-              <option value="1">Physical</option>
-            </Form.Control>
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="address">
-          <Form.Label column sm={2}>
-            Address
-              </Form.Label>
-          <Col sm={10}>
-            <Form.Control as="textarea" rows="2" placeholder="Address" autoComplete="off" disabled={!physical} required={physical} />
-          </Col>
-        </Form.Group>
 
-        <Form.Group as={Row} controlId="meeting_link">
-          <Form.Label column sm={2}>
-            Meeting Link
+                  <Form.Control as="textarea" rows="2" placeholder="Description" autoComplete="off" required />
+                </Form.Group>
+                <Form.Group as={Row} controlId="max_participants">
+                  <Form.Label>
+                    Max Participants*
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="text" placeholder="Meeting Link" autoComplete="off" disabled={!virtual} required={virtual} />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="start_datetime">
-          <Form.Label column sm={2}>
-            Start*
+
+                  <Form.Control type="number" placeholder="Max Participants" autoComplete="off" required />
+                </Form.Group>
+                <Form.Group as={Row} controlId="event_type">
+                  <Form.Label>
+                    Type*
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="datetime-local" placeholder="Start Date" value={startDate || props.startDate} onChange={handleStartDate} required />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="end_datetime">
-          <Form.Label column sm={2}>
-            End*
+
+                  <Form.Control as="select" onChange={handleTypeChange}>
+                    <option value="">Please Select</option>
+                    <option value="0">Virtual</option>
+                    <option value="1">Physical</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Row} controlId="address">
+                  <Form.Label>
+                    Address
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="datetime-local" placeholder="End Date" value={endDate || props.endDate} onChange={handleEndDate} required />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="category">
-          <Form.Label column sm={2}>
-            Category*
+
+                  <Form.Control as="textarea" rows="2" placeholder="Address" autoComplete="off" disabled={!physical} required={physical} />
+                </Form.Group>
+
+                <Form.Group as={Row} controlId="meeting_link">
+                  <Form.Label>
+                    Meeting Link
               </Form.Label>
-          <Col sm={10}>
-            <Form.Control as="select">
-              <option value="">Please Select</option>
-              {renderCategory()}
-            </Form.Control>
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} controlId="tags">
-          <Form.Label column sm={2}>
-            Tags*
+
+                  <Form.Control type="text" placeholder="Meeting Link" autoComplete="off" disabled={!virtual} required={virtual} />
+                </Form.Group>
+                <Form.Group as={Row} controlId="start_datetime">
+                  <Form.Label>
+                    Start*
               </Form.Label>
-          <Col sm={10}>
-            <Select options={tags} isMulti={true}
-              onChange={(value) =>
-                handleTagsAdd(value)}
-              labelField={"label"}
-              searchBy={"label"}
-              searchable={true}
-            />
-          </Col>
-        </Form.Group>
-        <div className="d-flex justify-content-end">
-          <button className="btn btn-primary mr-2" type="submit">
-            Save Changes </button>
+
+                  <Form.Control type="datetime-local" placeholder="Start Date" value={startDate || props.startDate} onChange={handleStartDate} required />
+                </Form.Group>
+                <Form.Group as={Row} controlId="end_datetime">
+                  <Form.Label>
+                    End*
+              </Form.Label>
+
+                  <Form.Control type="datetime-local" placeholder="End Date" value={endDate || props.endDate} onChange={handleEndDate} required />
+                </Form.Group>
+                <Form.Group as={Row} controlId="category">
+                  <Form.Label>
+                    Category*
+              </Form.Label>
+
+                  <Form.Control as="select">
+                    <option value="">Please Select</option>
+                    {renderCategory()}
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Row} controlId="tags">
+                  <Form.Label>
+                    Tags*
+              </Form.Label>
+                  <div className="w-100">
+                    <Select className options={tags} isMulti={true}
+                      onChange={(value) =>
+                        handleTagsAdd(value)}
+                      labelField={"label"}
+                      searchBy={"label"}
+                      searchable={true}
+                    />
+                  </div>
+                </Form.Group>
+                <div className="d-flex justify-content-end">
+                  <button className="btn btn-primary mr-2" type="submit">
+                    Save Changes </button>
+                </div>
+              </Form >
+            </div>
+          </div>
         </div>
-      </Form >
+      </div>
     </div >
   )
 }
