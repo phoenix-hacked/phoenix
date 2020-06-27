@@ -42,7 +42,7 @@ const GoogleLogin = () => {
     const name = userToken.getBasicProfile().getName();
     const profileImg = userToken.getBasicProfile().getImageUrl();
 
-    axios.post(`${process.env.REACT_APP_BACKEND_SERVICE}/sessions`, userToken)
+    axios.post(`/api/sessions`, userToken)
       .then(function (response) {
         setUser({
           name: name,
