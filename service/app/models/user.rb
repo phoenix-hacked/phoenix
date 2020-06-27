@@ -8,4 +8,9 @@ class User < ApplicationRecord
     0 => 'individual',
     1 => 'institute',
   }.freeze
+
+  ROLE = {
+    0 => 'admin',
+    1 => 'member'
+  }
 end

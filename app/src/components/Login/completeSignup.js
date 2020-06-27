@@ -34,12 +34,12 @@ const CompleteSignup = (props) => {
     })
       .then(function (response) {
         toastr.success('Successfully updated');
-        NProgress.end();
+        NProgress.done();
       })
       .catch(function (error) {
         console.log(error);
         toastr.error('Something went wrong.');
-        NProgress.end();
+        NProgress.done();
       });
   }
 
