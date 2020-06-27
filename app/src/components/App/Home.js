@@ -119,6 +119,7 @@ const Home = (props) => {
       setLoggedIn(false);
       setUserToken(null)
       console.log('User signed out.');
+      window.location.reload();
     });
   }
 

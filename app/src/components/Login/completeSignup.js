@@ -35,6 +35,7 @@ const CompleteSignup = (props) => {
       .then(function (response) {
         toastr.success('Successfully updated');
         NProgress.done();
+        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
