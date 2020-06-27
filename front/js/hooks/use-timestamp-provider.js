@@ -17,7 +17,7 @@ const useTimestampProvider = () => {
       const res = await axios.get('/home/timestamp');
 
       setTimestamp(res.data.timestamp);
-    } catch (error) {
+    } catch(error) {
       log.error(error);
     }
   };

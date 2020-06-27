@@ -32,18 +32,11 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true } },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer(), cssnano()],
-              sourceMap: true,
-            },
-          },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          'style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
     ],

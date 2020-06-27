@@ -6,12 +6,15 @@ import React from 'react';
 
 import Timestamp from './Timestamp';
 
+import GoogleLogin from './login'
+
+import './App.css'
+
+
 const App = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
-
-      <Timestamp />
+      <GoogleLogin />
     </div>
   );
 };
