@@ -10,7 +10,7 @@ const Homepage = () => {
         <div className="col-12">
           <span className="d-flex align-items-center purchase-popup py-5 pr-0">
             <div className="col-6 display-3 text-dark">
-              <strong>Sahayak</strong> a place for people who want to grow together
+            <h2> <strong>Sahayak,</strong>&nbsp;Bridge the gap between where you are now and the goal you intend to reach!!</h2>
                 </div>
             <div className="col-6">
               <img src={require("../../assets/images/friends.svg")} className={`w-100 ${styles.display}`} />
