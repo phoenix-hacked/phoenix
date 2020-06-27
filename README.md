@@ -1,8 +1,8 @@
 # phoenix
 
-### Install RVM(Ruby Version Manager) 
+### Install RVM(Ruby Version Manager)
 `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
-    
+
 #### Install Ruby 2.7.1 using RVM
     - rvm install ruby-2.7.1
 
@@ -20,10 +20,10 @@
     - brew services start postgresql
 
 #### Update config/database.yml details if needed
-    - rake db:setup
+    - rake db:setup [one time only]
 
-#### Generate assets for development
-    - npm run webpack
+#### Run migration
+    - rake db:migration
 
 #### Start server
     - rails s

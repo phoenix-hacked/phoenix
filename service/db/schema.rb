@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_042151) do
+ActiveRecord::Schema.define(version: 2020_06_27_051745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "website"
+    t.text "about"
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "event_participants", force: :cascade do |t|
+    t.string "event_id"
+    t.string "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "event_ratings", force: :cascade do |t|
+    t.string "user_id"
+    t.string "event_id"
+    t.integer "rating"
+    t.text "feedback"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.integer "type"
+    t.integer "status"
+    t.text "address"
+    t.string "meeting_link"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.string "category"
+    t.json "tags"
+    t.string "user_id"
+    t.string "mentor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "institutions", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "website"
+    t.text "about"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
