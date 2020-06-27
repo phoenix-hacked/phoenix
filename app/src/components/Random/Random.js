@@ -1,5 +1,5 @@
 import React from 'react';
-import {useActions, useRandomAPI} from '../../features/random';
+import {useActions, useRandomAPI} from '../../redux/random';
 import classes from './Random.module.css';
 
 const Random = () => {

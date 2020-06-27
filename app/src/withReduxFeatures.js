@@ -1,8 +1,8 @@
 import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import promise from 'redux-promise-middleware';
-import {CounterReducer} from './features/counter';
-import {RandomReducer} from './features/random';
+import {CounterReducer} from './redux/counter';
+import {RandomReducer} from './redux/random';
 import withProvider from './withProvider';
 
 /**

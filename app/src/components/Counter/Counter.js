@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCountValue, useActions} from '../../features/counter';
+import {useCountValue, useActions} from '../../redux/counter';
 import classes from './Counter.module.css';
 
 const Counter = () => {

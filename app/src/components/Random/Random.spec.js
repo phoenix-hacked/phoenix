@@ -5,7 +5,7 @@ import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import promise from 'redux-promise-middleware';
 import configureStore from 'redux-mock-store';
-import {GET_RANDOM_NUMBER} from '../../features/random/actionTypes';
+import {GET_RANDOM_NUMBER} from '../../redux/random/actionTypes';
 import Random from './Random';
 import config from '../../config';
 

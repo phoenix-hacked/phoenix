@@ -2,7 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {render, fireEvent} from '@testing-library/react';
 import configureStore from 'redux-mock-store';
-import {INCREMENT_COUNTER} from 'features/counter/actionTypes';
+import {INCREMENT_COUNTER} from 'redux/counter/actionTypes';
 import Counter from './Counter';
 
 describe('components > Counter', () => {
