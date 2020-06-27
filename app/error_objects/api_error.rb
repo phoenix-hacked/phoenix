@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # APIError wrapper
-class APIError < StandardError
+class ApiError < StandardError
   attr_accessor :code, :message
 
   def initialize(code, msg = nil, _request = nil, _exception = nil)
