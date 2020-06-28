@@ -3,9 +3,15 @@ import { Form, Col, Row } from 'react-bootstrap';
 import Select from 'react-select';
 import moment from 'moment-timezone';
 import axios from 'axios';
+import Homepage from '../../Homepage'
 
 const EventForm = (props) => {
   console.log(props)
+  if(!props.user) {
+    return (
+      <Homepage />
+    )
+  }
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [tag, setTag] = useState([])

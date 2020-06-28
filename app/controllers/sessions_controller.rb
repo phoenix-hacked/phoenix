@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
   def parse_params
     user_details = params[:Qt]
     {
-      'first_name': user_details['vW'], "last_name": user_details['wU'], 'email': user_details['zu'], 'google_id': user_details['SU']
+      'first_name': user_details['vW'], "last_name": user_details['wU'], 'email': user_details['zu'],
+      'google_id': user_details['SU'], 'avatar': user_details['UK']
     }
   end
 end

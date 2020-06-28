@@ -14,14 +14,14 @@ const Navbar = (props) => {
           <i className="mdi mdi-menu"></i>
         </button>
         <ul className="navbar-nav navbar-nav-left header-links">
-          <li className="nav-item d-none d-md-flex">
+          {/* <li className="nav-item d-none d-md-flex">
             <a href="/" className="nav-link">Home
             </a>
           </li>
-          <li className="nav-item active d-none d-xl-flex">
+          <li className="nav-item d-none d-xl-flex">
             <a href="/profile" className="nav-link">
-              <i className="mdi mdi-elevation-rise"></i>My Profile</a>
-          </li>
+              My Profile</a>
+          </li> */}
           {/* <li className="nav-item d-none d-lg-flex">
             <a href="!#" onClick={evt => evt.preventDefault()} className="nav-link">
               <i className="mdi mdi-bookmark-plus-outline"></i>Score</a>
@@ -44,17 +44,17 @@ const Navbar = (props) => {
                   <div className="preview-thumbnail">
                     <img src={require("../../../assets/images/faces/face10.jpg")} alt="profile" className="img-sm profile-pic" /> </div>
                   <div className="preview-item-content flex-grow py-2">
-                    <p className="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                    <p className="font-weight-light small-text"> The meeting is cancelled </p>
+                    <p className="preview-subject ellipsis font-weight-medium text-dark"> Sita Prasai</p>
+                    <p className="font-weight-light small-text"> Wants to join your event </p>
                   </div>
                 </Dropdown.Item>
                 <div className="dropdown-divider"></div>
                 <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center" href="!#" onClick={evt => evt.preventDefault()}>
                   <div className="preview-thumbnail">
-                    <img src={require("../../../assets/images/faces/face12.jpg")} alt="profile" className="img-sm profile-pic" /> </div>
+                    <img src="https://lh3.googleusercontent.com/B_vXZ4UUXc242bE-mFHIst69QUA3bPnzANcd6piCjBW7aas3mKpeC4Fsj_4tBkmvS7c" alt="profile" className="img-sm profile-pic" /> </div>
                   <div className="preview-item-content flex-grow py-2">
-                    <p className="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                    <p className="font-weight-light small-text"> The meeting is cancelled </p>
+                    <p className="preview-subject ellipsis font-weight-medium text-dark">Prabhu Bank </p>
+                    <p className="font-weight-light small-text"> Requested you for a mentorship </p>
                   </div>
                 </Dropdown.Item>
                 <div className="dropdown-divider"></div>
@@ -62,8 +62,8 @@ const Navbar = (props) => {
                   <div className="preview-thumbnail">
                     <img src={require("../../../assets/images/faces/face1.jpg")} alt="profile" className="img-sm profile-pic" /> </div>
                   <div className="preview-item-content flex-grow py-2">
-                    <p className="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                    <p className="font-weight-light small-text"> The meeting is cancelled </p>
+                    <p className="preview-subject ellipsis font-weight-medium text-dark">Ram Hari </p>
+                    <p className="font-weight-light small-text"> Wants to join your event </p>
                   </div>
                 </Dropdown.Item>
               </Dropdown.Menu>
@@ -73,20 +73,20 @@ const Navbar = (props) => {
             <Dropdown alignRight>
               <Dropdown.Toggle className="nav-link count-indicator p-0 toggle-arrow-hide bg-transparent">
                 <i className="mdi mdi-bell-outline"></i>
-                <span className="count bg-success">4</span>
+                <span className="count bg-success">10</span>
               </Dropdown.Toggle>
               <Dropdown.Menu className="navbar-dropdown preview-list">
                 <Dropdown.Item className="dropdown-item py-3 d-flex align-items-center" href="!#" onClick={evt => evt.preventDefault()}>
-                  <p className="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
+                  <p className="mb-0 font-weight-medium float-left">You have 10 new notifications </p>
                   <span className="badge badge-pill badge-primary float-right">View all</span>
                 </Dropdown.Item>
                 <div className="dropdown-divider"></div>
                 <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center" href="!#" onClick={evt => evt.preventDefault()}>
                   <div className="preview-thumbnail">
-                    <i className="mdi mdi-alert m-auto text-primary"></i>
+                    <i className="mdi mdi-calendar-clock m-auto text-primary"></i>
                   </div>
                   <div className="preview-item-content py-2">
-                    <h6 className="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
+                    <h6 className="preview-subject font-weight-normal text-dark mb-1">Event in 2 days</h6>
                     <p className="font-weight-light small-text mb-0"> Just now </p>
                   </div>
                 </Dropdown.Item>
@@ -96,8 +96,8 @@ const Navbar = (props) => {
                     <i className="mdi mdi-settings m-auto text-primary"></i>
                   </div>
                   <div className="preview-item-content py-2">
-                    <h6 className="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p className="font-weight-light small-text mb-0"> Private message </p>
+                    <h6 className="preview-subject font-weight-normal text-dark mb-1">Begin Cooking</h6>
+                    <p className="font-weight-light small-text mb-0"> 10 people joined your event </p>
                   </div>
                 </Dropdown.Item>
                 <div className="dropdown-divider"></div>
@@ -106,7 +106,7 @@ const Navbar = (props) => {
                     <i className="mdi mdi-airballoon m-auto text-primary"></i>
                   </div>
                   <div className="preview-item-content py-2">
-                    <h6 className="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
+                    <h6 className="preview-subject font-weight-normal text-dark mb-1">Received kudos for last session </h6>
                     <p className="font-weight-light small-text mb-0"> 2 days ago </p>
                   </div>
                 </Dropdown.Item>
@@ -133,9 +133,9 @@ const Navbar = (props) => {
                     </div>
                   </div>
                 </Dropdown.Item>
-                {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" onClick={evt => evt.preventDefault()}>
-                  Manage Accounts
-                  </Dropdown.Item> */}
+                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" href="/profile">
+                  My Profile
+                </Dropdown.Item>
                 {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
                   My Profile
                   </Dropdown.Item> */}

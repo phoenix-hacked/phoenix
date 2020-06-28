@@ -1,0 +1,2 @@
+frontend:
+	yarn start .env

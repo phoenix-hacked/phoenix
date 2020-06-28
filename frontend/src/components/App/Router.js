@@ -50,9 +50,6 @@ const AppRoutes = (prop) => {
 
         <Route path="/form-Elements/basic-elements" component={BasicElements} />
 
-          <Route path="/tables/basic-table" component={ BasicTable } />
-          <Route path="/tables/mentee-table" component={ MenteeTable } />
-          <Route path="/tables/mentor-table" component={ MentorTable } />
 
         <Route path="/icons/font-awesome" component={FontAwesome} />
 
@@ -68,7 +65,7 @@ const AppRoutes = (prop) => {
         <Route path="/user-pages/blank-page" component={BlankPage} />
 
 
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/" />
       </Switch>
     </Suspense>
   );
