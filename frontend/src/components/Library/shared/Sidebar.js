@@ -20,7 +20,6 @@ class Sidebar extends Component {
   }
 
   findUserType() {
-    console.log(this.props)
     const type = this.props.user.userDetail.type
     return type === 1 ? "Company" : "Individual"
   }
