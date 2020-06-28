@@ -24,26 +24,26 @@ const Homepage = () => {
         </div>
       </div>
       
-      <div class="row py-5">
-	    <div class="container my-lg-5">
-		    <h2 class="text-center font-weight-bold">Learn and grow easily with sahayak</h2>
-		    <div class="row">
-		        <div class="item col-12 col-lg-4">
-				    <div class="item-inner text-center p-3 p-lg-5">
+      <div className="row py-5">
+	    <div className="container my-lg-5">
+		    <h2 className="text-center font-weight-bold">Learn and grow easily with sahayak</h2>
+		    <div className="row">
+		        <div className="item col-12 col-lg-4">
+				    <div className="item-inner text-center p-3 p-lg-5">
               <i className={`mdi mdi-account-group mb-3 ${styles.icons}`} aria-hidden="true"></i>
 					    <h5>Focused on UX</h5>
 					    <div>Use this area to list your app's key benefits. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </div>
 				    </div>
 			    </div>
-			    <div class="item col-12 col-lg-4">
-				    <div class="item-inner text-center p-3 p-lg-5">
+			    <div className="item col-12 col-lg-4">
+				    <div className="item-inner text-center p-3 p-lg-5">
             <i className={`mdi mdi-alert-octagon mb-3 ${styles.icons}`} aria-hidden="true"></i>
 					    <h5>Some Details</h5>
 					    <div>Use this area to list your app's key benefits. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </div>
 				    </div>
 			    </div>
-			    <div class="item col-12 col-lg-4">
-				    <div class="item-inner text-center p-3 p-lg-5">
+			    <div className="item col-12 col-lg-4">
+				    <div className="item-inner text-center p-3 p-lg-5">
             <i className={`mdi mdi-alert-octagon mb-3 ${styles.icons}`} aria-hidden="true"></i>
 					    <h5>Other Details</h5>
 					    <div>Use this area to list your app's key benefits. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </div>

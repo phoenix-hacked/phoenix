@@ -33,6 +33,7 @@ const EventForm = lazy(() => import('../Library/events/addEvent'));
 // Actual Routes
 const Homepage = lazy(() => import('../Homepage'));
 const Profile = lazy(() => import('../Profile/Profile'));
+const OthersProfile = lazy(() => import('../Profile/OthersProfile'));
 const Dashboard1 = lazy(() => import('../Library/dashboard/Dashboard1'));
 
 const AppRoutes = (prop) => {
@@ -43,6 +44,7 @@ const AppRoutes = (prop) => {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/homepage" component={Homepage} />
         <Route exact path="/profile" render={(props) => <Profile {...props} user={prop.user} />} />
+        <Route exact path="/profile/:id" render={(props) => <OthersProfile {...props} user={prop.user} />} />
 
         <Route exact path="/events" exact render={(props) => <EventForm {...props} userToken={prop.userToken} user={prop.user} />} />
 
