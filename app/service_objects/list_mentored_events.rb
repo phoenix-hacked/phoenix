@@ -3,9 +3,9 @@
 class ListMentoredEvents
   attr_reader :params, :mentor_id
 
-  def initialize(params:, current_user:)
+  def initialize(params:, mentor_id:)
     @params = params
-    @mentor_id = params.mentor_id.present? ? params.mentor_id : current_user.id
+    @mentor_id = mentor_id
   end
 
   def call

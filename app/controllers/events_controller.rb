@@ -10,7 +10,7 @@ class EventsController < ActionController::API
   end
 
   def user_events
-    response = current_user.admin? ? list_events : list_member_events
+    response = list_member_events
     render json: response, status: 200
   end
 
@@ -27,7 +27,24 @@ class EventsController < ActionController::API
   private
 
   def list_events
-    Event.where(list_params)
+    events = Event.where(list_params.except(:user_id))
+    events.map do |event|
+      attendees = event.event_participants.count
+      { id: event.id,
+        title: event.name,
+        description: event.description,
+        event_type: event.event_type,
+        status: event.status,
+        address: event.address,
+        meeting_link: event.meeting_link,
+        start_time: event.start_datetime,
+        end_time: event.end_datetime,
+        category: event.category,
+        tags: event.tags,
+        mentor_id: event.mentor_id,
+        mentor_name: mentor_name(event.mentor_id),
+        attendees: attendees }
+    end
   end
 
   def list_params
@@ -40,7 +57,6 @@ class EventsController < ActionController::API
   end
 
   def list_member_events
-    return events_template unless current_user.member?
     { participated_events: ListParticipatedEvents.new(params: user_events_params,
                                                       user_id: params[:user_id])
                                                  .call,
@@ -48,11 +64,7 @@ class EventsController < ActionController::API
                                               mentor_id: params[:mentor_id])
                                          .call }
   end
-
-  def events_template
-    { participated_events: [], mentored_events: [] }
-  end
-
+  
   def user_events_params
     params.permit(:user_id, :mentor_id, :event_type, :status, :start_datetime, :end_datetime,
                   :category, :tags)
