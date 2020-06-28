@@ -3,9 +3,9 @@
 class ListParticipatedEvents
   attr_reader :params, :user_id
 
-  def initialize(params:, current_user:)
+  def initialize(params:, user_id:)
     @params = params
-    @user_id = params.user_id.present? ? params.user_id : current_user.id
+    @user_id = user_id
   end
 
   def call
@@ -39,7 +39,7 @@ class ListParticipatedEvents
   end
 
   def mentor_name(mentor_id)
-    User.find_by(mentor_id: mentor_id)
+    User.find_by(mentor_id: mentor_id).name
   end
 
   def rating(event_id)
