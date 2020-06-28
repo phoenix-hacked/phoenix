@@ -5,6 +5,7 @@ import promise from 'redux-promise-middleware';
 import {CounterReducer} from './redux/counter';
 import {RandomReducer} from './redux/random';
 import {ProfileReducer} from './redux/profile';
+import {EventReducer} from './redux/events';
 import withProvider from './withProvider';
 
 import sagas from './sagas';
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   count: CounterReducer,
   random: RandomReducer,
   profile: ProfileReducer,
+  events: EventReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

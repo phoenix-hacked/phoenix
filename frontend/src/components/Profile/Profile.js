@@ -3,6 +3,7 @@ import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import { Formik } from 'formik';
 import { updateProfileData, initiateProfileData } from '../../redux/profile/actions';
+import { initiateEventData } from '../../redux/events/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const options = [
@@ -20,6 +21,7 @@ const Profile = (props) => {
   const dispatch = useDispatch();
   const profileInfo = useSelector(state => state.profile);
   React.useEffect(() => {
+    dispatch(initiateEventData(userID));
     dispatch(initiateProfileData(userID));
   }, []);
   if(!profileInfo.profile || !Object.keys(profileInfo.profile).length) {

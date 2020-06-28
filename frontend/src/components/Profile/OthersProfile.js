@@ -1,14 +1,16 @@
 import React from 'react';
 import {initiateProfileData} from '../../redux/profile/actions';
 import {useDispatch, useSelector} from 'react-redux';
+import Events from '../Events/Events';
 
 const OthersProfile = props => {
-  const {location} = props;
-  console.log(props);
+  const {match} = props;
   const dispatch = useDispatch();
+  console.log(props);
   const profileInfo = useSelector(state => state.profile);
+  const userId = match.params.id;
   React.useEffect(() => {
-    dispatch(initiateProfileData(1));
+    dispatch(initiateProfileData(match.params.id));
   }, []);
   if (!profileInfo.profile || !Object.keys(profileInfo.profile).length) {
     return null;
@@ -19,7 +21,7 @@ const OthersProfile = props => {
   return (
     <div>
       <div className="row justify-content-center">
-        <div className="col-lg-6 grid-margin">
+        <div className="col-lg-8 grid-margin">
           <div className="card">
             <div className="card-body">
               <div>
@@ -70,6 +72,13 @@ const OthersProfile = props => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="row justify-content-center">
+          <div className="card">
+            <div className="card-body">
+              <Events userId={match.params.id} />
+            </div>
+          </div>
       </div>
     </div>
   );

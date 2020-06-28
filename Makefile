@@ -6,7 +6,7 @@ run:
 	heroku local -f Procfile.dev
 
 run-client:
-	yarn --cwd frontend start
+	yarn --cwd frontend start .env
 
 run-server:
-	rails s
+	rails s -p 4000

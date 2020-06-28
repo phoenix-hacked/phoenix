@@ -12,3 +12,19 @@ export const requestUpdateProfileData = async (payload) => {
   const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, profileData);
   return response.data;
 };
+
+export const requestGetEventData = async (userId) => {
+  const response = await axios.get(`${API_BASE_PATH}/events/user_events`, {
+    params: {
+      user_id: userId,
+      mentor_id: userId,
+    }
+  });
+  return response.data;
+}
+
+export const requestUpdateEventData = async (payload) => {
+  const { userId, profileData } = payload;
+  const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, profileData);
+  return response.data;
+};
