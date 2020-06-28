@@ -57,7 +57,7 @@ const Profile = (props) => {
   return (
     <div>
       <div className="page-header">
-        
+
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-6 grid-margin">
