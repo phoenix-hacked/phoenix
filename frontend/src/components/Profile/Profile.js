@@ -19,7 +19,11 @@ const Profile = (props) => {
       <HomePage />
     )
   }
-  const { user: { userID } } = props;
+  const { user } = props;
+  if(!user || !Object.keys(user).length) {
+    return null;
+  }
+  const { userID } = user;
   const dispatch = useDispatch();
   const profileInfo = useSelector(state => state.profile);
   React.useEffect(() => {
@@ -55,7 +59,7 @@ const Profile = (props) => {
   return (
     <div>
       <div className="page-header">
-        <h3 className="page-title"> My Profile </h3>
+
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-6 grid-margin">
@@ -76,6 +80,7 @@ const Profile = (props) => {
                   } = props;
                   return (
                     <form onSubmit={handleSubmit}>
+                      <h2 className="page-title mb-4 mt-2"> My Profile </h2>
                       <h4 className="card-title">Personal Details</h4>
                       <Form.Group>
                         <label htmlFor="first_name">First Name</label>

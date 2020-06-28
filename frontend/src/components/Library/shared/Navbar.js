@@ -144,7 +144,7 @@ const Navbar = (props) => {
                   </Dropdown.Item> */}
                 <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={props.logout}>
                   Sign Out
-                  </Dropdown.Item>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>
