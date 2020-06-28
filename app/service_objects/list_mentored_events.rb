@@ -33,7 +33,7 @@ class ListMentoredEvents
   private
 
   def events
-    @events ||= Event.where(params.merge(mentor_id: mentor_id))
+    @events ||= Event.where(params)
   end
 
   def mentor_name
@@ -41,7 +41,7 @@ class ListMentoredEvents
   end
 
   def prepare_mentor_name
-    user = User.find_by(id: mentor_id).name
+    user = User.find_by(id: mentor_id)
     "#{user.first_name} #{user.last_name}".strip
   end
 end

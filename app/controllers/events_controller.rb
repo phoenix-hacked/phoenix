@@ -66,7 +66,7 @@ class EventsController < ActionController::API
   end
   
   def user_events_params
-    params.permit(:user_id, :mentor_id, :event_type, :status, :start_datetime, :end_datetime,
+    params.permit(:mentor_id, :event_type, :status, :start_datetime, :end_datetime,
                   :category, :tags)
   end
 

@@ -4,7 +4,7 @@ class ListParticipatedEvents
   attr_reader :params, :user_id
 
   def initialize(params:, user_id:)
-    @params = params
+    @params = params.except(:mentor_id)
     @user_id = user_id
   end
 
@@ -43,11 +43,11 @@ class ListParticipatedEvents
   end
 
   def mentor_name(mentor_id)
-    user = User.find_by(id: mentor_id).name
+    user = User.find_by(id: mentor_id)
     "#{user.first_name} #{user.last_name}".strip
   end
 
   def rating(event_id)
-    EventRating.where(user_id: user_id, event_id: event_id)&.rating
+    EventRating.where(user_id: user_id, event_id: event_id).last&.rating
   end
 end
