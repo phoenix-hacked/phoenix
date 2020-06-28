@@ -6,7 +6,7 @@ export class BasicTable extends Component {
     return (
       <div>
         <div className="page-header">
-          <h1 className="page-title">Upcoming Events</h1>
+          <h1 className="page-title">Upcoming sessions</h1>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>View All</a></li>
