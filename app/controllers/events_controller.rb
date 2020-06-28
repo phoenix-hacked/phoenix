@@ -31,16 +31,21 @@ class EventsController < ActionController::API
   end
 
   def list_params
-    params.permit(:user_id, :event_type, :status, :start_datetime, :end_datetime, :category, :mentor_id)
+    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :mentor_id)
+  end
+  
+  def mentor_name(mentor_id)
+    user = User.find_by(id: mentor_id)
+    "#{user.first_name} #{user.last_name}".strip
   end
 
   def list_member_events
     return events_template unless current_user.member?
     { participated_events: ListParticipatedEvents.new(params: user_events_params,
-                                                      current_user: current_user)
+                                                      user_id: params[:user_id])
                                                  .call,
       mentored_events: ListMentoredEvents.new(params: user_events_params,
-                                              current_user: current_user)
+                                              mentor_id: params[:mentor_id])
                                          .call }
   end
 
@@ -49,10 +54,12 @@ class EventsController < ActionController::API
   end
 
   def user_events_params
-    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :tags)
+    params.permit(:user_id, :mentor_id, :event_type, :status, :start_datetime, :end_datetime,
+                  :category, :tags)
   end
 
   def create_events_params
-    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :meeting_link, :name, :address, :user_id, :mentor_id, :max_participants, :description, tags:[])
+    params.permit(:event_type, :status, :start_datetime, :end_datetime, :category, :meeting_link,
+                  :name, :address, :user_id, :mentor_id, :max_participants, :description, tags:[])
   end
 end
