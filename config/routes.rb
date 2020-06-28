@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     resources :events, only: [:index, :create], path: 'events' do
       collection do
+        get :global_stats
         get :user_events
       end
     end
