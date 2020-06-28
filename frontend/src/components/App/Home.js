@@ -5,11 +5,7 @@ import './App.scss';
 import { withRouter } from 'react-router-dom';
 import { gapi, loadAuth2 } from 'gapi-script';
 import axios from 'axios';
-
 import { Spinner } from 'react-bootstrap';
-
-
-
 import AppRoutes from './Router';
 import Navbar from '../Library/shared/Navbar';
 import Sidebar from '../Library/shared/Sidebar';

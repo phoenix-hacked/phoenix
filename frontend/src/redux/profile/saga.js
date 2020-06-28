@@ -38,7 +38,7 @@ export function* initiateProfileData(action) {
   try {
     const profileData = yield call(requestGetProfileData, payload.userId);
     yield put(updateProfileStoreData(payload.userId, profileData));
-  } catch (err) {
+  } catch(err) {
     yield put(updateProfileStoreData(payload.userId, mock_data));
   }
 }
@@ -48,7 +48,9 @@ export function* updateProfileData(action) {
   try {
     const profileData = yield call(requestUpdateProfileData, payload);
     yield put(updateProfileStoreData(payload.userId, profileData));
-  } catch (err) {
+    toastr.success('Successfully updated');
+  } catch(err) {
+    toastr.error('Failed to update data.');
     // yield put(addCustomAttributeError());
   }
 }

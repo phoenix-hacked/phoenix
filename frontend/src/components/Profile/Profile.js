@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import { Formik } from 'formik';
 import { updateProfileData, initiateProfileData } from '../../redux/profile/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import HomePage from '../Homepage'
 
 const options = [
   { value: 'AI', label: 'AI' },
@@ -12,6 +14,11 @@ const options = [
 ]
 
 const Profile = (props) => {
+  if(!props.user) {
+    return (
+      <HomePage />
+    )
+  }
   const { user: { userID } } = props;
   const dispatch = useDispatch();
   const profileInfo = useSelector(state => state.profile);
