@@ -14,6 +14,16 @@ class EventsController < ActionController::API
     render json: response, status: 200
   end
 
+  def global_stats
+    data = {
+      total_mentors: 15,
+      total_mentees: 102,
+      total_organizations: 20,
+      mentorship_hours: 250
+    }
+    render json: data, status: 200
+  end
+
   private
 
   def list_events
