@@ -1,9 +1,12 @@
+
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import Select from 'react-select';
 import { Formik } from 'formik';
 import { updateProfileData, initiateProfileData } from '../../redux/profile/actions';
+import { initiateEventData } from '../../redux/events/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import HomePage from '../Homepage'
 
 const options = [
   { value: 'AI', label: 'AI' },
@@ -12,10 +15,16 @@ const options = [
 ]
 
 const Profile = (props) => {
+  if(!props.user) {
+    return (
+      <HomePage />
+    )
+  }
   const { user: { userID } } = props;
   const dispatch = useDispatch();
   const profileInfo = useSelector(state => state.profile);
   React.useEffect(() => {
+    dispatch(initiateEventData(userID));
     dispatch(initiateProfileData(userID));
   }, []);
   if(!profileInfo.profile || !Object.keys(profileInfo.profile).length) {
@@ -48,7 +57,7 @@ const Profile = (props) => {
   return (
     <div>
       <div className="page-header">
-        <h3 className="page-title"> My Profile </h3>
+
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-6 grid-margin">
@@ -69,6 +78,7 @@ const Profile = (props) => {
                   } = props;
                   return (
                     <form onSubmit={handleSubmit}>
+                      <h2 className="page-title mb-4 mt-2"> My Profile </h2>
                       <h4 className="card-title">Personal Details</h4>
                       <Form.Group>
                         <label htmlFor="first_name">First Name</label>

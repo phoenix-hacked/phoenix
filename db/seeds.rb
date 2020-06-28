@@ -28,7 +28,7 @@ member_three.save!
 
 # Create Member as an institution
 institution = User.new(first_name: 'CloudFactory', last_name: 'Nepal',
-                       email: 'madhuri@cloudfactory', user_type: User::INSTITUTION,
+                       email: 'madhuri@cloudfactory', user_type: User::INSTITUTE,
                        status: User::ACTIVE, role: User::MEMBER)
 institution.save!
 
@@ -122,7 +122,7 @@ second_completed_event = Event.new(name: 'Learning Auto-CAD', event_type: Event:
                                    start_datetime: Time.new(2020, 2, 15, 10, 0, 0),
                                    end_datetime: Time.new(2020, 2, 17, 17, 0, 0),
                                    user_id: institution.id, mentor_id: mentor_three.id,
-                                   description: auti_cad_des, category: 'Architecture')
+                                   description: auto_cad_des, category: 'Architecture')
                                    second_completed_event.save!
 
 # Create Participants for Completed Event Two

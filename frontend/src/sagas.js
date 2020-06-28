@@ -3,6 +3,7 @@ import { all, call, put, takeEvery } from 'redux-saga/effects';
 // import { saveUserSession, saveUserSessionError, actions } from '../actions/userSession';
 // import { requestUserSession } from '../api';
 import { watchProfileDataInitiate, watchProfileDataUpdate } from './redux/profile/saga';
+import { watchEventDataInitiate, watchEventDataUpdate } from './redux/events/saga';
 // function* userSession() {
 //   yield takeEvery(actions.REQUEST_USER_SESSION, initializeSession);
 // }
@@ -17,5 +18,5 @@ import { watchProfileDataInitiate, watchProfileDataUpdate } from './redux/profil
 // }
 
 export default function* initializer() {
-  yield all([watchProfileDataInitiate(), watchProfileDataUpdate()]);
+  yield all([watchProfileDataInitiate(), watchProfileDataUpdate(), watchEventDataInitiate(), watchEventDataUpdate()]);
 }

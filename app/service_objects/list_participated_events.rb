@@ -3,9 +3,9 @@
 class ListParticipatedEvents
   attr_reader :params, :user_id
 
-  def initialize(params:, current_user:)
-    @params = params
-    @user_id = params.user_id.present? ? params.user_id : current_user.id
+  def initialize(params:, user_id:)
+    @params = params.except(:mentor_id)
+    @user_id = user_id
   end
 
   def call
@@ -21,7 +21,7 @@ class ListParticipatedEvents
         end_time: event.end_datetime,
         category: event.category,
         tags: event.tags,
-        user_name: user.name,
+        user_name: user_name,
         mentor_id: event.mentor_id,
         mentor_name: mentor_name(event.mentor_id),
         rating: rating(event.id) }
@@ -31,18 +31,23 @@ class ListParticipatedEvents
   private
 
   def events
-    @events ||= Events.where(user_events_params.merge(id: user.event_participants.map(&:event_id)))
+    @events ||= Event.where(params.merge(id: user.event_participants.map(&:event_id)))
   end
 
   def user
-    @user ||= User.find_by(user_id: user_id)
+    @user ||= User.find_by(id: user_id)
+  end
+
+  def user_name
+    @user_name ||= "#{user.first_name} #{user.last_name}".strip
   end
 
   def mentor_name(mentor_id)
-    User.find_by(mentor_id: mentor_id)
+    user = User.find_by(id: mentor_id)
+    "#{user.first_name} #{user.last_name}".strip
   end
 
   def rating(event_id)
-    EventRating.where(user_id: user_id, event_id: event_id)&.rating
+    EventRating.where(user_id: user_id, event_id: event_id).last&.rating
   end
 end
