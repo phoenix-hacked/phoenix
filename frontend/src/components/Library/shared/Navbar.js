@@ -133,9 +133,9 @@ const Navbar = (props) => {
                     </div>
                   </div>
                 </Dropdown.Item>
-                {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" onClick={evt => evt.preventDefault()}>
-                  Manage Accounts
-                  </Dropdown.Item> */}
+                <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0 mt-2" href="/profile">
+                  My Profile
+                </Dropdown.Item>
                 {/* <Dropdown.Item className="dropdown-item preview-item d-flex align-items-center border-0" onClick={evt => evt.preventDefault()}>
                   My Profile
                   </Dropdown.Item> */}
