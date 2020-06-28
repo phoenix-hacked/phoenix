@@ -13,7 +13,9 @@ const Homepage = () => {
                 <div className="font-weight-bold mt-lg-5 pt-lg-3 display-2 pb-2">Sahayak</div>
 				        <div className="mb-3 display-5">Bridge the gap between where you are now and the goal you intend to reach!!</div>
                 <div className="cta-btns">
-                  <div className="mb-4"><a className="btn btn-info font-weight-bold btn-block" href="#signup">Sign Up</a></div>
+                  <div className="mb-4"><a className={`btn btn-info font-weight-bold ${styles.signupBtn}`} href="#signup" onClick={() => {
+                    document.getElementById('customBtn').click();
+                  }}>Sign Up</a></div>
                 </div>
             {/* <h2> <strong>Sahayak,</strong>&nbsp;Bridge the gap between where you are now and the goal you intend to reach!!</h2> */}
                 </div>

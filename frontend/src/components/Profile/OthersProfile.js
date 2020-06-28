@@ -29,9 +29,9 @@ const OthersProfile = props => {
                       <div className="row">
                         <div className="col-12">
                           <div className="profile">
-                            <div className="avatar col-6 mx-auto">
+                            <div className="avatar col-3 mx-auto">
                               <img
-                                src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg"
+                                src={profile.avatar ? profile.avatar : "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg"}
                                 alt="Circle Image"
                                 className="img-raised rounded-circle img-fluid"
                               />
