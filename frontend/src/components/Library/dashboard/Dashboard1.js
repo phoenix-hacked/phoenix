@@ -109,7 +109,7 @@ const Dashboard1 = (props) => {
         </div>
       </div>
 
-      <MentorTable />
+      {/* <MentorTable /> */}
       <MenteeTable />
     </div>
   );
