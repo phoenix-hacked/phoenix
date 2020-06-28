@@ -73,6 +73,7 @@ const CompleteSignup = (props) => {
                 <div className="form-group">
                   <label htmlFor="user_type">Type *</label>
                   <select className="form-control form-control-lg" id="user_type" onChange={handleTypeChange} placeholder={"Select type"} required >
+                    <option selected={true} value=''>Select Type</option>
                     <option value="individual">Individual</option>
                     <option value="institute">Institute</option>
                   </select>
