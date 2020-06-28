@@ -5,8 +5,8 @@ import { Dropdown } from 'react-bootstrap';
 
 class Sidebar extends Component {
   state = {};
-
   toggleMenuState(menuState) {
+    console.log(props)
     if(this.state[menuState]) {
       this.setState({ [menuState]: false });
     } else if(Object.keys(this.state).length === 0) {
@@ -17,6 +17,12 @@ class Sidebar extends Component {
       });
       this.setState({ [menuState]: true });
     }
+  }
+
+  findUserType() {
+    console.log(this.props)
+    const type = this.props.user.userDetail.type
+    return type === 1 ? "Company" : "Individual"
   }
 
   componentDidUpdate(prevProps) {
@@ -48,6 +54,7 @@ class Sidebar extends Component {
 
   }
   render() {
+
     return (
       <nav className="sidebar sidebar-offcanvas" id="sidebar">
         <div className="text-center sidebar-brand-wrapper d-flex align-items-center">
@@ -65,7 +72,7 @@ class Sidebar extends Component {
                     </div>
                     <div className="text-left ml-3">
                       <p className="profile-name">{this.props.user.name}</p>
-                      <small className="designation text-muted text-small">Mentor</small>
+                      <small className="designation text-muted text-small">{this.findUserType()}</small>
                       <span className="status-indicator online"></span>
                     </div>
                   </div>
@@ -101,13 +108,28 @@ class Sidebar extends Component {
               <Link to="/events"><button className="btn btn-success btn-block"> Add Event <i className="mdi mdi-plus"></i></button></Link>
             </div>
           </li>
-          <li className={this.isPathActive('/dashboard') ? 'nav-item active' : 'nav-item'}>
-            <Link className="nav-link" to="/dashboard">
+
+          <li className={this.isPathActive('/') ? 'nav-item active' : 'nav-item'}>
+            <Link className="nav-link" to="/">
               <i className="mdi mdi-television menu-icon"></i>
               <span className="menu-title">Dashboard</span>
             </Link>
           </li>
-          <li className={this.isPathActive('/basic-ui') ? 'nav-item active' : 'nav-item'}>
+
+          <li className={this.isPathActive('/contact-us') ? 'nav-item active' : 'nav-item'}>
+            <Link className="nav-link" to="/">
+              <i className="mdi mdi-handshake menu-icon"></i>
+              <span className="menu-title">Request for mentorship</span>
+            </Link>
+          </li>
+          <li className={this.isPathActive('/contact-us') ? 'nav-item active' : 'nav-item'}>
+            <Link className="nav-link" to="/">
+              <i className="mdi mdi-contacts menu-icon"></i>
+              <span className="menu-title">Contact</span>
+            </Link>
+          </li>
+
+          {/*<li className={this.isPathActive('/basic-ui') ? 'nav-item active' : 'nav-item'}>
             <div className={this.state.basicUiMenuOpen ? 'nav-link menu-expanded' : 'nav-link'} onClick={() => this.toggleMenuState('basicUiMenuOpen')} data-toggle="collapse">
               <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               <span className="menu-title">Basic UI Elements</span>
@@ -160,15 +182,15 @@ class Sidebar extends Component {
                 <li className="nav-item"> <Link className={this.isPathActive('/user-pages/error-500') ? 'nav-link active' : 'nav-link'} to="/user-pages/error-500">500</Link></li>
               </ul>
             </Collapse>
-          </li>
-          <li className="nav-item">
+          </li>*/}
+          {/* <li className="nav-item">
             <a className="nav-link" href="http://www.bootstrapdash.com/demo/star-admin-free/react/documentation/documentation.html" rel="noopener noreferrer" target="_blank">
               <i className="mdi mdi-file-outline menu-icon"></i>
               <span className="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> */}
         </ul>
-      </nav>
+      </nav >
     );
   }
 
