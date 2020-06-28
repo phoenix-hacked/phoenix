@@ -39,14 +39,14 @@ const Dashboard1 = (props) => {
                   <i className="mdi mdi-cube text-danger icon-lg"></i>
                 </div>
                 <div className="float-right">
-                  <p className="mb-0 text-right text-dark">Total Number of Mentors</p>
+                  <p className="display-3">Mentors</p>
                   <div className="fluid-container">
-                    <h3 className="font-weight-medium text-right mb-0 text-dark">200+</h3>
+                    <h3 className="font-weight-medium text-right mb-0 text-dark">67+</h3>
                   </div>
                 </div>
               </div>
               <p className="text-muted mt-3 mb-0">
-                <i className="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth </p>
+                <i className="mdi mdi-chart-bell-curve-cumulative mr-1" aria-hidden="true"></i> 20%  weekly growth </p>
             </div>
           </div>
         </div>
@@ -58,14 +58,14 @@ const Dashboard1 = (props) => {
                   <i className="mdi mdi-receipt text-warning icon-lg"></i>
                 </div>
                 <div className="float-right">
-                  <p className="mb-0 text-right text-dark">Total number of Mentees</p>
+                  <p className="display-3"> Mentees</p>
                   <div className="fluid-container">
-                    <h3 className="font-weight-medium text-right mb-0 text-dark">250+</h3>
+                    <h3 className="font-weight-medium text-right mb-0 text-dark">167+</h3>
                   </div>
                 </div>
               </div>
               <p className="text-muted mt-3 mb-0">
-                <i className="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Total impact </p>
+                <i className="mdi mdi-chart-bell-curve-cumulative mr-1" aria-hidden="true"></i> 30% weekly growth </p>
             </div>
           </div>
         </div>
@@ -74,36 +74,38 @@ const Dashboard1 = (props) => {
             <div className="card-body">
               <div className="clearfix">
                 <div className="float-left">
-                  <i className="mdi mdi-poll-box text-success icon-lg"></i>
+                  <i className="mdi mdi-cube text-danger icon-lg"></i>
                 </div>
                 <div className="float-right">
-                  <p className="mb-0 text-right text-dark">Hours Impacted</p>
-                  <div className="fluid-container">
-                    <h3 className="font-weight-medium text-right mb-0 text-dark">6000+</h3>
-                  </div>
-                </div>
-              </div>
-              <p className="text-muted mt-3 mb-0">
-                <i className="mdi mdi-calendar mr-1" aria-hidden="true"></i> Seminars conducted </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
-          <div className="card card-statistics">
-            <div className="card-body">
-              <div className="clearfix">
-                <div className="float-left">
-                  <i className="mdi mdi-account-box-multiple text-info icon-lg"></i>
-                </div>
-                <div className="float-right">
-                  <p className="mb-0 text-right text-dark">Organizations</p>
+                  <p className="display-4">Organization</p>
                   <div className="fluid-container">
                     <h3 className="font-weight-medium text-right mb-0 text-dark">20+</h3>
                   </div>
                 </div>
               </div>
               <p className="text-muted mt-3 mb-0">
-                <i className="mdi mdi-reload mr-1" aria-hidden="true"></i> Number of organization enrolled </p>
+                <i className="mdi mdi-chart-bell-curve-cumulative mr-1" aria-hidden="true"></i> 5% weekly growth
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+          <div className="card card-statistics">
+            <div className="card-body">
+              <div className="clearfix">
+                <div className="float-left">
+                  <i className="mdi mdi-receipt text-warning icon-lg"></i>
+                </div>
+                <div className="float-right">
+                  <p className="display-4">Impact Hours</p>
+                  <div className="fluid-container">
+                    <h3 className="font-weight-medium text-right mb-0 text-dark">437+</h3>
+                  </div>
+                </div>
+              </div>
+              <p className="text-muted mt-3 mb-0">
+                <i className="mdi mdi-chart-bell-curve-cumulative mr-1" aria-hidden="true"></i> 3% weekly growth
+              </p>
             </div>
           </div>
         </div>
