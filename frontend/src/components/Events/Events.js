@@ -84,6 +84,9 @@ const Events = (props) => {
 
   return (<div>
     {
+     !events.length && !menteeEvents.length ? <div className="col-12 display-5">No events</div> : ''
+    }
+    {
       events.length ?
       (<><div className="page-header">
         <h1 className="page-title">Mentoring Events</h1>
