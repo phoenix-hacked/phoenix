@@ -23,8 +23,25 @@ export const requestGetEventData = async (userId) => {
   return response.data;
 }
 
+export const requestGetDashboardEventData = async (userId) => {
+  const response = await axios.get(`${API_BASE_PATH}/events`, {
+    params: {
+      status: 0,
+    }
+  });
+  return response.data;
+}
+
+
 export const requestUpdateEventData = async (payload) => {
   const { userId, profileData } = payload;
   const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, profileData);
   return response.data;
 };
+
+export const requestUpdateDashboardEventData = async (payload) => {
+  const { userId, profileData } = payload;
+  const response = await axios.put(`${API_BASE_PATH}/users/${userId}`, profileData);
+  return response.data;
+};
+
