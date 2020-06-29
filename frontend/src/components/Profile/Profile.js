@@ -9,10 +9,127 @@ import { useDispatch, useSelector } from 'react-redux';
 import HomePage from '../Homepage'
 
 const options = [
-  { value: 'AI', label: 'AI' },
-  { value: 'Machine Learning', label: 'Machine Learning' },
-  { value: 'Accounting', label: 'Accounting' }
-]
+  {
+    "label": "Networking",
+    "value": "Networking"
+  },
+  {
+    "label": "Acounting",
+    "value": "Acounting"
+  },
+  {
+    "label": "Audit",
+    "value": "Audit"
+  },
+  {
+    "label": "PHP",
+    "value": "PHP"
+  },
+  {
+    "label": "Java",
+    "value": "Java"
+  },
+  {
+    "label": "Android & iOS",
+    "value": "Android & iOS"
+  },
+  {
+    "label": "Copywriting",
+    "value": "Copywriting"
+  },
+  {
+    "label": "Graphics Design",
+    "value": "Graphics Design"
+  },
+  {
+    "label": "Chef",
+    "value": "Chef"
+  },
+  {
+    "label": " Data Analysis",
+    "value": " Data Analysis"
+  },
+  {
+    "label": "Content Writing",
+    "value": "Content Writing"
+  },
+  {
+    "label": "Freelance",
+    "value": "Freelance"
+  },
+  {
+    "label": "Value Chain",
+    "value": "Value Chain"
+  },
+  {
+    "label": "Microsoft Excel",
+    "value": "Microsoft Excel"
+  },
+  {
+    "label": "Public Speaking",
+    "value": "Public Speaking"
+  },
+  {
+    "label": "Microsoft word",
+    "value": "Microsoft word"
+  },
+  {
+    "label": "Presentation",
+    "value": "Presentation"
+  },
+  {
+    "label": "Cooking",
+    "value": "Cooking"
+  },
+  {
+    "label": "Baking",
+    "value": "Baking"
+  },
+  {
+    "label": "language",
+    "value": "language"
+  },
+  {
+    "label": "Arts",
+    "value": "Arts"
+  },
+  {
+    "label": "QA",
+    "value": "QA"
+  },
+  {
+    "label": "Developer",
+    "value": "Developer"
+  },
+  {
+    "label": "Engineer",
+    "value": "Engineer"
+  },
+  {
+    "label": "UI/UX",
+    "value": "UI/UX"
+  },
+  {
+    "label": "HR",
+    "value": "HR"
+  },
+  {
+    "label": "Finance",
+    "value": "Finance"
+  },
+  {
+    "label": "Bank",
+    "value": "Bank"
+  },
+  {
+    "label": "IT",
+    "value": "IT"
+  },
+  {
+    "label": "Sofware Development",
+    "value": "Sofware Development"
+  }
+];
 
 const Profile = (props) => {
   if(!props.user) {

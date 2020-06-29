@@ -6,6 +6,7 @@ import {CounterReducer} from './redux/counter';
 import {RandomReducer} from './redux/random';
 import {ProfileReducer} from './redux/profile';
 import {EventReducer} from './redux/events';
+import { DashboardEventReducer } from 'redux/dashboard_events';
 import withProvider from './withProvider';
 
 import sagas from './sagas';
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   random: RandomReducer,
   profile: ProfileReducer,
   events: EventReducer,
+  dashboardEvents: DashboardEventReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
